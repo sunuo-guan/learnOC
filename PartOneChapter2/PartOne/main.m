@@ -7,10 +7,7 @@
 //
 
 
-//单行注释
-/*
- 多行注释
- */
+
 #import <Foundation/Foundation.h>
 
 int main(int argc, const char * argv[]) {
