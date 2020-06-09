@@ -24,11 +24,17 @@ int main(int argc, const char * argv[]) {
         Fraction *secondFraction = [[Fraction alloc] init];
         
         [firstFraction setNumerator:1 andDenominator:4];
-        [secondFraction setNumerator:1 andDenominator:3];
+        [secondFraction setNumerator:1 andDenominator:6];
         
         [firstFraction add:secondFraction];
         
-        NSLog(@"The value of fraction is: %i/%i, equals to %g", [firstFraction numerator], [firstFraction denominator], [firstFraction convertToNum]);
+        NSLog(@"The value of result is: %i/%i, equals to %g", [firstFraction numerator], [firstFraction denominator], [firstFraction convertToNum]);
+        
+        
+        //test reduce
+        [firstFraction reduce];
+        NSLog(@"The result = ");
+        [firstFraction print];
     }
     return 0;
 }
