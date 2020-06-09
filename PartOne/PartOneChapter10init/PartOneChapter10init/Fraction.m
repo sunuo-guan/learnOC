@@ -12,6 +12,11 @@
 
 @synthesize numerator, denominator;
 
+- (instancetype)init
+{
+    return [self initWith:0 over:0];
+}
+
 - (Fraction *)initWith:(int)n over:(int)d
 {
     self = [super self];
