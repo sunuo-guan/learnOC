@@ -73,7 +73,6 @@ int main(int argc, const char * argv[]) {
         [myFraction setDenominator: 3];
         
         NSLog(@"The value of fraction is: %i/%i, equals to %g", [myFraction getNumberator], [myFraction getDenominator], [myFraction convertToNum]);
-        
         //[myFraction print];
     }
     return 0;
