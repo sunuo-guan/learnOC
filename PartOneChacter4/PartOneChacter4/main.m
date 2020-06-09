@@ -78,6 +78,39 @@ int main(int argc, const char * argv[]) {
         [myCalculator subtract:10.0];
         [myCalculator multiply:5];
         NSLog(@"result: %g",[myCalculator getAccumulator]);
+        
+        
+        //switch测试
+        double val1,val2;
+        char operator;
+        Calculator *myTest = [[Calculator alloc] init];
+        
+        NSLog(@"input the expression");
+        scanf("%lf %c %lf", &val1, &operator, &val2);
+        
+        [myTest setAccumulator: val1];
+        
+        switch (operator) {
+            case '+':
+                [myTest add: val2];
+                break;
+            case '-':
+                [myTest subtract: val2];
+                break;
+            case '*':
+                [myTest multiply: val2];
+                break;
+            case '/':
+                if(val2==0)
+                    NSLog(@"cannnot divide");
+                else
+                    [myTest divide: val2];
+                break;
+            default:
+                break;
+        }
+        
+        NSLog(@"%.2f", [myTest getAccumulator]);
     }
     return 0;
 }
