@@ -12,6 +12,16 @@
 
 @synthesize numerator, denominator;
 
+- (Fraction *)initWith:(int)n over:(int)d
+{
+    self = [super self];
+    
+    if(self)
+        [self setNumerator:n andDenominator:d];
+    
+    return self;
+}
+
 - (void) print
 {
     NSLog(@"%i/%i", numerator, denominator);
