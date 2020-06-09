@@ -10,40 +10,17 @@
 
 @implementation Fraction
 
-{
-    int numberator;
-    int denominator;
-}
+@synthesize numerator, denominator;
 
 - (void) print
 {
-    NSLog(@"%i/%i", numberator, denominator);
-}
-
-- (void) setNumberator: (int) n
-{
-    numberator = n;
-}
-
-- (void) setDenominator: (int) d
-{
-    denominator = d;
-}
-
-- (int) getNumberator
-{
-    return numberator;
-}
-
-- (int) getDenominator
-{
-    return denominator;
+    NSLog(@"%i/%i", numerator, denominator);
 }
 
 - (double) convertToNum
 {
     if(denominator != 0)
-        return (double) numberator / denominator;
+        return (double) numerator / denominator;
     else
         return NAN;
 }

@@ -13,10 +13,10 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Fraction *myFraction = [[Fraction alloc] init];
         
-        [myFraction setNumberator: 1];
-        [myFraction setDenominator: 3];
+        myFraction.numerator = 1;
+        myFraction.denominator = 3;
         
-        NSLog(@"The value of fraction is: %i/%i, equals to %g", [myFraction getNumberator], [myFraction getDenominator], [myFraction convertToNum]);
+        NSLog(@"The value of fraction is: %i/%i, equals to %g", myFraction.numerator, myFraction.denominator, [myFraction convertToNum]);
     }
     return 0;
 }
