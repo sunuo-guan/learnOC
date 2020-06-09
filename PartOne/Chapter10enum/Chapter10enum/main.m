@@ -1,6 +1,6 @@
 //
 //  main.m
-//  PartOneChapter10init
+//  Chapter10enum
 //
 //  Created by 关智豪 on 2020/6/9.
 //  Copyright © 2020 guanzhihao. All rights reserved.
