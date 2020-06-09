@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void) print;
 - (double) convertToNum;
+- (void) setNumerator:(int) n andDenominator:(int) d;
+- (void) add: (Fraction *) f;
 
 @end
 

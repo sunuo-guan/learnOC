@@ -17,6 +17,18 @@ int main(int argc, const char * argv[]) {
         [myFraction setDenominator:3];
         
         NSLog(@"The value of fraction is: %i/%i, equals to %g", [myFraction numerator], [myFraction denominator], [myFraction convertToNum]);
+        
+        
+        //test add
+        Fraction *firstFraction = [[Fraction alloc] init];
+        Fraction *secondFraction = [[Fraction alloc] init];
+        
+        [firstFraction setNumerator:1 andDenominator:4];
+        [secondFraction setNumerator:1 andDenominator:3];
+        
+        [firstFraction add:secondFraction];
+        
+        NSLog(@"The value of fraction is: %i/%i, equals to %g", [firstFraction numerator], [firstFraction denominator], [firstFraction convertToNum]);
     }
     return 0;
 }
