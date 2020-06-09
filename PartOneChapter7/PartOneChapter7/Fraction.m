@@ -35,6 +35,8 @@
 {
     numerator = numerator * f.denominator + denominator * f.numerator;
     denominator = denominator * f.denominator;
+    //在内部约减；
+    [self reduce];
 }
 
 - (void) reduce
