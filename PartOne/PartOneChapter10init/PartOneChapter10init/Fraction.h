@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property int numerator, denominator;
 
+- (Fraction *)initWith:(int)n over:(int)d;
 - (void) print;
 - (double) convertToNum;
 - (void) setNumerator:(int) n andDenominator:(int) d;
