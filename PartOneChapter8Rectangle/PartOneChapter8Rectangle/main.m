@@ -20,6 +20,8 @@ int main(int argc, const char * argv[]) {
         [testRect setWidth:5 andHeight:8];
         testRect.origin = testPoint;
         
+        [testPoint setX:50 andY:50];
+        
         NSLog(@"Rectangle w = %i, h = %i", testRect.width, testRect.height);
         NSLog(@"Origin at (%i, %i)", testRect.origin.x, testRect.origin.y);
         NSLog(@"Area = %i, Perimeter = %i", [testRect area], [testRect perimeter]);
