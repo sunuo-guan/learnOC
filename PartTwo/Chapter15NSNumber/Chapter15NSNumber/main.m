@@ -49,6 +49,11 @@ int main(int argc, const char * argv[]) {
         
         if([intNumber compare:myNumber]==NSOrderedAscending)
             NSLog(@"first less than second");
+        
+        //@用法尝试
+        NSNumber *testNum;
+        testNum = @230;
+        NSLog(@"%i", [testNum intValue]);
     }
     return 0;
 }
