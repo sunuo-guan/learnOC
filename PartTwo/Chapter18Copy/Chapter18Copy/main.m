@@ -77,6 +77,18 @@ int main(int argc, const char * argv[]) {
             NSLog(@" %@", elem);
         
         
+        //测试NSNumber，
+        NSMutableArray *arr5 = [NSMutableArray arrayWithObjects:@1,@2,@3,@4,nil];
+        NSMutableArray *arr6;
+        
+        arr6 = [arr5 mutableCopy];
+        arr6[0] = @5;
+        
+        NSLog(@"dataArr5:");
+        NSLog(@" %@", arr5[0]);
+        
+        NSLog(@"dataArr6:");
+        NSLog(@" %@", arr6[0]);
 
     }
     return 0;
