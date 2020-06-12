@@ -38,13 +38,32 @@
     
     //CGRect firstFrame = CGRectMake(160, 240, 100, 150);
     //让firstView充满UIwindow
-    CGRect firstFrame = self.window.bounds;
-    GZHHypnosisView *firstView = [[GZHHypnosisView alloc]initWithFrame:firstFrame];
+    //CGRect firstFrame = self.window.bounds;
+    //GZHHypnosisView *firstView = [[GZHHypnosisView alloc]initWithFrame:firstFrame];
     //firstView.backgroundColor = [UIColor redColor];
     
     //添加进window属性
-    [self.window addSubview:firstView];
-    [self.window makeKeyAndVisible];
+    //[self.window addSubview:firstView];
+    //[self.window makeKeyAndVisible];
+    
+    //创建两个frame
+    CGRect sreenRect = self.window.bounds;
+    CGRect bigRect = sreenRect;
+    bigRect.size.width *= 2.0;
+    bigRect.size.height *= 2.0;
+    
+    //创建一个uiscrollview
+    UIScrollView *scroll = [[UIScrollView alloc]initWithFrame:sreenRect];
+    [self.window addSubview:scroll];
+    
+    //将自定义的uiview加入到scroll
+    GZHHypnosisView *hypnosisView = [[GZHHypnosisView alloc]initWithFrame:bigRect];
+    [scroll addSubview:hypnosisView];
+    
+    //设置scroll的取景范围
+    scroll.contentSize = bigRect.size;
+    
+    
     return YES;
 }
 

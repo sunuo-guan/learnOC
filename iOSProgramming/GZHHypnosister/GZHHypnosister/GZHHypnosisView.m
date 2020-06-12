@@ -8,6 +8,12 @@
 
 #import "GZHHypnosisView.h"
 
+@interface GZHHypnosisView()
+
+@property (strong, nonatomic)UIColor *circleColor;
+
+@end
+
 @implementation GZHHypnosisView
 
 /*
@@ -24,8 +30,15 @@
     if(self) {
         //背景色设置为透明
         self.backgroundColor = [UIColor clearColor];
+        self.circleColor = [UIColor lightGrayColor];
     }
     return self;
+}
+
+- (void)setCircleColor:(UIColor *)circleColor
+{
+    _circleColor = circleColor;
+    [self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect
@@ -68,14 +81,29 @@
     //设置线条宽度
     path.lineWidth = 10;
     //设置绘制线条的颜色
-    [[UIColor lightGrayColor]setStroke];
+    [self.circleColor setStroke];
     //开始绘制
     [path stroke];
     
+    /*
     //添加图片
     UIImage *image = [UIImage imageNamed:@"0.jpeg"];
     CGRect imageRect = CGRectMake(100, 100, 200, 200);
     [image drawInRect:imageRect];
+     */
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"%@ was touched", self);
+    
+    //随机获取三个0到1之间的数字
+    float red = (arc4random() % 100)/10.0;
+    float green = (arc4random() % 100)/10.0;
+    float blue = (arc4random() % 100)/10.0;
+    UIColor *randomColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    self.circleColor = randomColor;
+    
 }
 
 @end
