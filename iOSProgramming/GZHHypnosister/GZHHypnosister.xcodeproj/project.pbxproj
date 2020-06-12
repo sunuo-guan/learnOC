@@ -14,6 +14,7 @@
 		6654C30A24936914004304BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6654C30824936914004304BA /* LaunchScreen.storyboard */; };
 		6654C30D24936914004304BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6654C30C24936914004304BA /* main.m */; };
 		6654C31524936BB9004304BA /* GZHHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6654C31424936BB9004304BA /* GZHHypnosisView.m */; };
+		6654C31724937C5D004304BA /* 0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6654C31624937C5D004304BA /* 0.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		6654C30C24936914004304BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6654C31324936BB9004304BA /* GZHHypnosisView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHHypnosisView.h; sourceTree = "<group>"; };
 		6654C31424936BB9004304BA /* GZHHypnosisView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHHypnosisView.m; sourceTree = "<group>"; };
+		6654C31624937C5D004304BA /* 0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 0.jpeg; path = ../../../../Documents/0.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				6654C31324936BB9004304BA /* GZHHypnosisView.h */,
 				6654C31424936BB9004304BA /* GZHHypnosisView.m */,
 				6654C2FD24936913004304BA /* SceneDelegate.h */,
+				6654C31624937C5D004304BA /* 0.jpeg */,
 				6654C2FE24936913004304BA /* SceneDelegate.m */,
 				6654C30324936913004304BA /* Main.storyboard */,
 				6654C30624936914004304BA /* Assets.xcassets */,
@@ -135,6 +138,7 @@
 			files = (
 				6654C30A24936914004304BA /* LaunchScreen.storyboard in Resources */,
 				6654C30724936914004304BA /* Assets.xcassets in Resources */,
+				6654C31724937C5D004304BA /* 0.jpeg in Resources */,
 				6654C30524936913004304BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
