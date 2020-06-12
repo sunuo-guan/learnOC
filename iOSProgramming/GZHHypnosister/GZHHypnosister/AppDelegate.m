@@ -36,14 +36,11 @@
     // 设置UIWindow的背景颜色
     self.window.backgroundColor = [UIColor whiteColor];
     
-    CGRect firstFrame = CGRectMake(160, 240, 100, 150);
+    //CGRect firstFrame = CGRectMake(160, 240, 100, 150);
+    //让firstView充满UIwindow
+    CGRect firstFrame = self.window.bounds;
     GZHHypnosisView *firstView = [[GZHHypnosisView alloc]initWithFrame:firstFrame];
-    firstView.backgroundColor = [UIColor redColor];
-    
-    CGRect secondFrame = CGRectMake(20, 30, 50, 50);
-    GZHHypnosisView *secondView = [[GZHHypnosisView alloc]initWithFrame:secondFrame];
-    secondView.backgroundColor = [UIColor blueColor];
-    [firstView addSubview:secondView];
+    //firstView.backgroundColor = [UIColor redColor];
     
     //添加进window属性
     [self.window addSubview:firstView];

@@ -18,4 +18,45 @@
 }
 */
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if(self) {
+        //背景色设置为透明
+        self.backgroundColor = [UIColor clearColor];
+    }
+    return self;
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    //充满整个view
+    CGRect bounds = self.bounds;
+    
+    //计算圆心
+    CGPoint center;
+    center.x = bounds.origin.x + bounds.size.width/2.0;
+    center.y = bounds.origin.y + bounds.size.height/2.0;
+    
+    //取最小值计算半径
+    float radius = (MIN(bounds.size.height, bounds.size.width) / 2.0);
+    
+    //创建绘图UIBezierPath类的对象绘制圆
+    UIBezierPath *path = [[UIBezierPath alloc]init];
+    //定义路径
+    [path addArcWithCenter:center
+                    radius:radius
+                startAngle:0.0
+                  endAngle:2 * M_PI
+                 clockwise:YES];
+    //设置线条宽度
+    path.lineWidth = 10;
+    //设置绘制线条的颜色
+    [[UIColor lightGrayColor]setStroke];
+    //开始绘制
+    [path stroke];
+    
+    
+}
+
 @end
