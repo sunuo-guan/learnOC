@@ -14,6 +14,7 @@
 		6654C331249390FE004304BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6654C330249390FE004304BA /* Assets.xcassets */; };
 		6654C334249390FE004304BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6654C332249390FE004304BA /* LaunchScreen.storyboard */; };
 		6654C337249390FE004304BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6654C336249390FE004304BA /* main.m */; };
+		6654EF692497210B004304BA /* GZHHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6654EF682497210B004304BA /* GZHHypnosisView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		6654C333249390FE004304BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6654C335249390FE004304BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6654C336249390FE004304BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6654EF672497210B004304BA /* GZHHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZHHypnosisView.h; path = ../../GZHHypnosister/GZHHypnosister/GZHHypnosisView.h; sourceTree = "<group>"; };
+		6654EF682497210B004304BA /* GZHHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZHHypnosisView.m; path = ../../GZHHypnosister/GZHHypnosister/GZHHypnosisView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 			children = (
 				6654C324249390FD004304BA /* AppDelegate.h */,
 				6654C325249390FD004304BA /* AppDelegate.m */,
+				6654EF672497210B004304BA /* GZHHypnosisView.h */,
+				6654EF682497210B004304BA /* GZHHypnosisView.m */,
 				6654C327249390FD004304BA /* SceneDelegate.h */,
 				6654C328249390FD004304BA /* SceneDelegate.m */,
 				6654C32A249390FD004304BA /* ViewController.h */,
@@ -148,6 +153,7 @@
 			files = (
 				6654C32C249390FD004304BA /* ViewController.m in Sources */,
 				6654C326249390FD004304BA /* AppDelegate.m in Sources */,
+				6654EF692497210B004304BA /* GZHHypnosisView.m in Sources */,
 				6654C337249390FE004304BA /* main.m in Sources */,
 				6654C329249390FD004304BA /* SceneDelegate.m in Sources */,
 			);
