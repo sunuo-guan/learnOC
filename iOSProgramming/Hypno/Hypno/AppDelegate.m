@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "GZHHypnosisViewController.h"
+#import "ReminderViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,9 +19,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    UIViewController *vc = [UIViewController new];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.window setRootViewController:vc];
+    
+    //使用init初始化
+    GZHHypnosisViewController *gzhvc = [[GZHHypnosisViewController alloc]init];
+    ReminderViewController *rvc = [[ReminderViewController alloc]init];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc]init];
+    tabBarController.viewControllers = @[gzhvc, rvc];
+    
+    /*
+    //获取NSBundler对象的指针，代表应用的主程序包
+    NSBundle *appBundle = [NSBundle mainBundle];
+    //告诉初始化方法在appBundle中查找xib文件
+    ReminderViewController *rvc = [[ReminderViewController alloc]initWithNibName:@"ReminderViewController" bundle:appBundle];
+    */
+     
+    //设置根视图控制器
+    self.window.rootViewController = tabBarController;
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
