@@ -21,7 +21,10 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     GZHItemsViewController *itemsViewController = [[GZHItemsViewController alloc]init];
-    self.window.rootViewController = itemsViewController;
+    //创建UInavigationController
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:itemsViewController];
+    //设置根视图
+    self.window.rootViewController = navController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

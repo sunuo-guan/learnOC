@@ -10,18 +10,18 @@
 #import "BNRItem.h"
 #import "GZHItemStore.h"
 
-@interface GZHItemsViewController()
-
-@property (nonatomic, strong)IBOutlet UIView *headerView;
-
-@end
-
 @implementation GZHItemsViewController
 
 - (instancetype)init {
     self = [super initWithStyle:UITableViewStylePlain];
     if(self) {
-        
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"Homepwner";
+        //创建UIBarButtonItem对象，将其动作方法设置为addNewItem
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
+        //为UINaivationItem对象的rightbutton赋值，指向新创建的UIBarButtonItem对象
+        navItem.rightBarButtonItem = bbi;
+        navItem.leftBarButtonItem = self.editButtonItem;
     }
     return self;
 }
@@ -34,8 +34,6 @@
 {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -53,14 +51,6 @@
     return cell;
 }
 
-- (UIView *)headerView
-{
-    if (!_headerView) {
-        [[NSBundle mainBundle]loadNibNamed:@"HeaderView" owner:self options:nil];
-    }
-    return _headerView;
-}
-
 - (IBAction)addNewItem:(id)sender
 {
     BNRItem *newItem = [[GZHItemStore sharedStore]createItem];
@@ -70,18 +60,6 @@
     //插入新行，行数必须与数据源的对象数一致
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
     
-}
-
-- (IBAction)toggleEditingMode:(id)sender
-{
-    //编辑模式的切换
-    if(self.isEditing) {
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        [self setEditing:NO animated:YES];
-    }else {
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        [self setEditing:YES animated:YES];
-    }
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,6 +76,25 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [[GZHItemStore sharedStore]moveItemAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
+//选择某行
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController *detailViewController =[[DetailViewController alloc]init];
+    //获取选取的行的item对象
+    NSArray *items = [[GZHItemStore sharedStore]allItems];
+    BNRItem *selectItem = items[indexPath.row];
+    //将选中的item赋给detailviewcontroller
+    detailViewController.item = selectItem;
+    //压入栈
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 @end
