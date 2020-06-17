@@ -14,7 +14,11 @@
     NSString *_serialNumber;
     int _valueInDollars;
     NSDate *_dateCreated;
+    
 }
+
+@property (nonatomic, readonly, strong)NSDate *dateCreated;
+@property (nonatomic, copy)NSString *itemKey;
 
 + (instancetype)randomItem;
 

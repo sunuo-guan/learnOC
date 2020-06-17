@@ -18,6 +18,7 @@
 		6629B38224986FA7000E2713 /* GZHItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6629B38124986FA7000E2713 /* GZHItemStore.m */; };
 		6629B38B2498C6D2000E2713 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6629B3892498C6D2000E2713 /* DetailViewController.m */; };
 		6629B38C2498C6D2000E2713 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6629B38A2498C6D2000E2713 /* DetailViewController.xib */; };
+		667FC6362499B72B00A36D3C /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 667FC6352499B72B00A36D3C /* ImageStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		6629B3882498C6D2000E2713 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		6629B3892498C6D2000E2713 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		6629B38A2498C6D2000E2713 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		667FC6342499B72B00A36D3C /* ImageStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageStore.h; sourceTree = "<group>"; };
+		667FC6352499B72B00A36D3C /* ImageStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 			children = (
 				6629B3882498C6D2000E2713 /* DetailViewController.h */,
 				6629B3892498C6D2000E2713 /* DetailViewController.m */,
+				667FC6342499B72B00A36D3C /* ImageStore.h */,
+				667FC6352499B72B00A36D3C /* ImageStore.m */,
 				6629B38A2498C6D2000E2713 /* DetailViewController.xib */,
 				6629B361249861DB000E2713 /* AppDelegate.h */,
 				6629B362249861DB000E2713 /* AppDelegate.m */,
@@ -172,6 +177,7 @@
 				6629B374249861DE000E2713 /* main.m in Sources */,
 				6629B366249861DB000E2713 /* SceneDelegate.m in Sources */,
 				6629B38B2498C6D2000E2713 /* DetailViewController.m in Sources */,
+				667FC6362499B72B00A36D3C /* ImageStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@
 //
 
 #import "BNRItem.h"
+#import "ImageStore.h"
+#import "DetailViewController.h"
 
 @implementation BNRItem
 
@@ -63,6 +65,10 @@
         _valueInDollars = value;
         // Set _dateCreated to the current date and time
         _dateCreated = [[NSDate alloc] init];
+        //创建NSUUID对象
+        NSUUID *uuid = [[NSUUID alloc]init];
+        NSString  *key = [uuid UUIDString];
+        _itemKey = key;
     }
 
     // Return the address of the newly initialized object

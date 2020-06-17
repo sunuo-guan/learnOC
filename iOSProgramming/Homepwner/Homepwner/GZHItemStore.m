@@ -7,6 +7,7 @@
 //
 
 #import "GZHItemStore.h"
+#import "ImageStore.h"
 #import "BNRItem.h"
 
 @interface GZHItemStore()
@@ -56,6 +57,9 @@
 
 - (void)removeItem:(BNRItem *)item
 {
+    //删除item也要删除对应的image对象
+    NSString *key = item.itemKey;
+    [[ImageStore shareStored]deleteImageForKey:key];
     [self.privateItems removeObjectIdenticalTo:item];
 }
 
