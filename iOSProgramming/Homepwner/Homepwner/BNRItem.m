@@ -87,6 +87,28 @@
     return [self initWithItemName:@"Item"];
 }
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super init];
+    if (self) {
+        _itemName = [coder decodeObjectForKey:@"itemName"];
+        _serialNumber = [coder decodeObjectForKey:@"serialNumber"];
+        _dateCreated = [coder decodeObjectForKey:@"dateCreated"];
+        _itemKey = [coder decodeObjectForKey:@"itemKey"];
+        _valueInDollars = [coder decodeIntForKey:@"valuerInDollars"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.itemName forKey:@"itemName"];
+    [aCoder encodeObject:self.serialNumber forKey:@"serialNumber"];
+    [aCoder encodeObject:self.dateCreated forKey:@"dateCreated"];
+    [aCoder encodeObject:self.itemKey forKey:@"itemKey"];
+    [aCoder encodeInt:self.valueInDollars forKey:@"valueInDollars"];
+}
+
 - (void)setItemName:(NSString *)str
 {
     _itemName = str;

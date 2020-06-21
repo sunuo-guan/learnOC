@@ -24,6 +24,36 @@
 
 #pragma mark - View life cycle
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    UIImageView *iv = [[UIImageView alloc]initWithImage:nil];
+    // 设置UIImageView对象的内容缩放模式
+    iv.contentMode = UIViewContentModeScaleAspectFit;
+    // 告诉自动布局系统不要将自动缩放掩码转换为约束
+    iv.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addSubview:iv];
+    self.imageView = iv;
+    //创建视图名称字典
+    NSDictionary *nameMap = @{@"imageView":self.imageView,@"dataLabel":self.dataLebel,@"toolbar":self.toolBar};
+    //创建约束
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[imageView]-0-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:nameMap];
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[dataLabel]-[imageView]-[toolbar]"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:nameMap];
+    //添加视图
+    [self.view addConstraints:horizontalConstraints];
+    [self.view addConstraints:verticalConstraints];
+    // 将imageView垂直方向的优先级设置为比其他视图低的数值
+    [self.imageView setContentHuggingPriority:200 forAxis:UILayoutConstraintAxisVertical];
+    [self.imageView setContentCompressionResistancePriority:700 forAxis:UILayoutConstraintAxisVertical];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

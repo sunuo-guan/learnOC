@@ -21,9 +21,10 @@
 + (instancetype)sharedStore
 {
     static GZHItemStore *shareStore = nil;
-    if(!shareStore) {
+    static dispatch_once_t onceItem;
+    dispatch_once(&onceItem, ^{
         shareStore = [[self alloc]initPrivate];
-    }
+    });
     return shareStore;
 }
 
@@ -37,9 +38,28 @@
 {
     self = [super self];
     if(self) {
-        _privateItems = [[NSMutableArray alloc]init];
+        NSString *path = [self itemArchive];
+        _privateItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        if (!_privateItems) {
+            _privateItems = [[NSMutableArray alloc]init];
+        }
     }
     return self;
+}
+
+//获取路径名，iOS下数组只有唯一一个路径
+- (NSString *)itemArchive
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    // 从documentDirectories数组获取第一个，也是唯一文档目录路径
+    NSString *documentDirectory = [documentDirectories firstObject];
+    return [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+}
+
+- (BOOL)saveChanges
+{
+    NSString *path = [self itemArchive];
+    return [NSKeyedArchiver archiveRootObject:self.privateItems toFile:path];
 }
 
 - (NSArray *)allItems
@@ -50,7 +70,7 @@
 
 - (BNRItem *)createItem
 {
-    BNRItem *item = [BNRItem randomItem];
+    BNRItem *item = [[BNRItem alloc]init];
     [self.privateItems addObject:item];
     return item;
 }

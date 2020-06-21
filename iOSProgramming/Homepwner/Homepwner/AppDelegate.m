@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GZHItemsViewController.h"
+#import "GZHItemStore.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,16 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    BOOL success = [[GZHItemStore sharedStore]saveChanges];
+    if (success) {
+        NSLog(@"Saved all of the items");
+    }else {
+        NSLog(@"Could not save");
+    }
 }
 
 
