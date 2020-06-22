@@ -9,6 +9,14 @@
 #import "GZHItemsViewController.h"
 #import "BNRItem.h"
 #import "GZHItemStore.h"
+#import "ImageStore.h"
+#import "ImageViewController.h"
+
+@interface GZHItemsViewController() <UIPopoverControllerDelegate>
+
+@property (nonatomic, strong)UIPopoverPresentationController *imagePopover;
+
+@end
 
 @implementation GZHItemsViewController
 
@@ -33,7 +41,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    // 创建UINib对象，该对象代表包含了BNRItemCell的NIB文件
+    UINib *nib = [UINib nibWithNibName:@"ItemCell" bundle:nil];
+    // 通过UINib对象注册相应的NIB文件
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"ItemCell"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -43,12 +54,40 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
+    ItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell" forIndexPath:indexPath];
     
     NSArray *items = [[GZHItemStore sharedStore]allItems];
     BNRItem *item = items[indexPath.row];
-    cell.textLabel.text = [item description];
+    cell.nameLabel.text = item.itemName;
+    cell.serialNumberLabel.text = item.serialNumber;
+    cell.valueLabel.text = [NSString stringWithFormat:@"$%d",item.valueInDollars];
+    cell.thumbnailView.image = item.thumbnail;
+    cell.actionBlock = ^{
+        NSLog(@"Going to show image for %@",item);
+//        if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+//            NSString *itemKey = item.itemKey;
+//            UIImage *img = [[ImageStore shareStored]imageForKey:itemKey];
+//            if (!img) {
+//                return;
+//            }
+//            CGRect rect = [self.viewconvertRect:cell.thumbnaillView.bounds fromView:cell.thumbnailView];
+//            ImageViewController *ivc = [[ImageViewController alloc]init];
+//            ivc.image = img;
+//            self.imagePopover = [[UIPopoverController alloc]initWithContentViewController:ivc];
+//            self.imagePopover.delegate = self;
+//            self.imagePopover.PopoverContentSize = CGSizeMake(600, 600);
+//            [self.imagePopover presentPopoverFromRect:rect
+//                                               inView:self.view
+//                             permittedArrowDirections:UIPopoverArrowDirectionAny
+//                                             animated:YES];
+//        }
+    };
     return cell;
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.imagePopover = nil;
 }
 
 - (IBAction)addNewItem:(id)sender

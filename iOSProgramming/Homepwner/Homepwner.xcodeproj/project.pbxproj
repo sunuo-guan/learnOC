@@ -18,6 +18,9 @@
 		6629B38224986FA7000E2713 /* GZHItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6629B38124986FA7000E2713 /* GZHItemStore.m */; };
 		6629B38B2498C6D2000E2713 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6629B3892498C6D2000E2713 /* DetailViewController.m */; };
 		6629B38C2498C6D2000E2713 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6629B38A2498C6D2000E2713 /* DetailViewController.xib */; };
+		66447C5D24A04E8200C7B551 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66447C5C24A04E8200C7B551 /* ItemCell.m */; };
+		66447C5F24A0504500C7B551 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66447C5E24A0504500C7B551 /* ItemCell.xib */; };
+		664483BE24A089D100C7B551 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664483BD24A089D100C7B551 /* ImageViewController.m */; };
 		667FC6362499B72B00A36D3C /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 667FC6352499B72B00A36D3C /* ImageStore.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,11 @@
 		6629B3882498C6D2000E2713 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		6629B3892498C6D2000E2713 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		6629B38A2498C6D2000E2713 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		66447C5B24A04E8200C7B551 /* ItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
+		66447C5C24A04E8200C7B551 /* ItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		66447C5E24A0504500C7B551 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		664483BC24A089D100C7B551 /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		664483BD24A089D100C7B551 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		667FC6342499B72B00A36D3C /* ImageStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageStore.h; sourceTree = "<group>"; };
 		667FC6352499B72B00A36D3C /* ImageStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +87,9 @@
 				6629B3892498C6D2000E2713 /* DetailViewController.m */,
 				667FC6342499B72B00A36D3C /* ImageStore.h */,
 				667FC6352499B72B00A36D3C /* ImageStore.m */,
+				66447C5B24A04E8200C7B551 /* ItemCell.h */,
+				66447C5E24A0504500C7B551 /* ItemCell.xib */,
+				66447C5C24A04E8200C7B551 /* ItemCell.m */,
 				6629B38A2498C6D2000E2713 /* DetailViewController.xib */,
 				6629B361249861DB000E2713 /* AppDelegate.h */,
 				6629B362249861DB000E2713 /* AppDelegate.m */,
@@ -88,6 +99,8 @@
 				6629B38124986FA7000E2713 /* GZHItemStore.m */,
 				6629B37A2498656D000E2713 /* GZHItemsViewController.h */,
 				6629B37B2498656D000E2713 /* GZHItemsViewController.m */,
+				664483BC24A089D100C7B551 /* ImageViewController.h */,
+				664483BD24A089D100C7B551 /* ImageViewController.m */,
 				6629B364249861DB000E2713 /* SceneDelegate.h */,
 				6629B365249861DB000E2713 /* SceneDelegate.m */,
 				6629B36A249861DB000E2713 /* Main.storyboard */,
@@ -158,6 +171,7 @@
 			files = (
 				6629B371249861DE000E2713 /* LaunchScreen.storyboard in Resources */,
 				6629B36E249861DE000E2713 /* Assets.xcassets in Resources */,
+				66447C5F24A0504500C7B551 /* ItemCell.xib in Resources */,
 				6629B38C2498C6D2000E2713 /* DetailViewController.xib in Resources */,
 				6629B36C249861DB000E2713 /* Main.storyboard in Resources */,
 			);
@@ -170,6 +184,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664483BE24A089D100C7B551 /* ImageViewController.m in Sources */,
+				66447C5D24A04E8200C7B551 /* ItemCell.m in Sources */,
 				6629B37C2498656D000E2713 /* GZHItemsViewController.m in Sources */,
 				6629B363249861DB000E2713 /* AppDelegate.m in Sources */,
 				6629B38224986FA7000E2713 /* GZHItemStore.m in Sources */,

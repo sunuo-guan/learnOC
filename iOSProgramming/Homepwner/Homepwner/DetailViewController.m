@@ -113,6 +113,7 @@
 {
     //通过info字典获取选取的照片
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [self.item setThumbnailFromImage:image];
     //将图像和key传入imageStore对象
     [[ImageStore shareStored]setImage:image forKey:self.item.itemKey];
     self.imageView.image = image;

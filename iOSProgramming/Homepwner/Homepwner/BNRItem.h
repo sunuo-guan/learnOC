@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Big Nerd Ranch. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface BNRItem : NSObject<NSCoding>
 {
@@ -19,8 +19,11 @@
 
 @property (nonatomic, readonly, strong)NSDate *dateCreated;
 @property (nonatomic, copy)NSString *itemKey;
+@property (nonatomic, strong)UIImage *thumbnail;
 
 + (instancetype)randomItem;
+
+- (void)setThumbnailFromImage:(UIImage *)image;
 
 // Designated initializer for BNRItem
 - (instancetype)initWithItemName:(NSString *)name

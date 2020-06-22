@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)deleteImageForKey:(NSString *)key;
 
+
 @end
 
 NS_ASSUME_NONNULL_END
