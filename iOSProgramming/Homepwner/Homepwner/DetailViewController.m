@@ -14,9 +14,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
-@property (weak, nonatomic) IBOutlet UILabel *dataLebel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
 
 @end
 
@@ -36,13 +39,13 @@
     [self.view addSubview:iv];
     self.imageView = iv;
     //创建视图名称字典
-    NSDictionary *nameMap = @{@"imageView":self.imageView,@"dataLabel":self.dataLebel,@"toolbar":self.toolBar};
+    NSDictionary *nameMap = @{@"imageView":self.imageView,@"dateLabel":self.dateLabel,@"toolbar":self.toolBar};
     //创建约束
     NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[imageView]-0-|"
                                                                              options:0
                                                                              metrics:nil
                                                                                views:nameMap];
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[dataLabel]-[imageView]-[toolbar]"
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[dateLabel]-[imageView]-[toolbar]"
                                                                            options:0
                                                                            metrics:nil
                                                                              views:nameMap];
@@ -68,12 +71,13 @@
         dateFormatter.dateStyle = NSDateFormatterMediumStyle;
         dateFormatter.timeStyle = NSDateFormatterNoStyle;
     }
-    self.dataLebel.text = [dateFormatter stringFromDate:item.dateCreated];
+    self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
     
     //imageview展示
     NSString *itemKey = self.item.itemKey;
     UIImage *imageToShow = [[ImageStore shareStored]imageForKey:itemKey];
     self.imageView.image = imageToShow;
+    [self updateFonts];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -124,6 +128,18 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)updateFonts
+{
+    UIFont *font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    self.nameLabel.font = font;
+    self.serialNumberLabel.font = font;
+    self.valueLabel.font = font;
+    self.dateLabel.font = font;
+    self.nameField.font = font;
+    self.serialNumberField.font = font;
+    self.valueField.font = font;
 }
 
 #pragma mark - setter and getter

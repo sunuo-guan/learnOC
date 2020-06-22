@@ -75,7 +75,7 @@
     if (result) {
         self.dictionary[key] = result;
     }else {
-        NSLog(@"unable to find %@", [self imageForKey:key]);
+        NSLog(@"unable to find %@", [self imagePathForKey:key]);
     }
     return result;
 }
