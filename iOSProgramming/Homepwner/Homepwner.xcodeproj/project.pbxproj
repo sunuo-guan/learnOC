@@ -21,6 +21,8 @@
 		66447C5D24A04E8200C7B551 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66447C5C24A04E8200C7B551 /* ItemCell.m */; };
 		66447C5F24A0504500C7B551 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66447C5E24A0504500C7B551 /* ItemCell.xib */; };
 		664483BE24A089D100C7B551 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664483BD24A089D100C7B551 /* ImageViewController.m */; };
+		664483EC24A0D20900C7B551 /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 664483EA24A0D20900C7B551 /* Homepwner.xcdatamodeld */; };
+		664483EF24A0D2E700C7B551 /* ImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 664483EE24A0D2E700C7B551 /* ImageTransformer.m */; };
 		667FC6362499B72B00A36D3C /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 667FC6352499B72B00A36D3C /* ImageStore.m */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,9 @@
 		66447C5E24A0504500C7B551 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		664483BC24A089D100C7B551 /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		664483BD24A089D100C7B551 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		664483EB24A0D20900C7B551 /* Homepwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homepwner.xcdatamodel; sourceTree = "<group>"; };
+		664483ED24A0D2E700C7B551 /* ImageTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTransformer.h; sourceTree = "<group>"; };
+		664483EE24A0D2E700C7B551 /* ImageTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTransformer.m; sourceTree = "<group>"; };
 		667FC6342499B72B00A36D3C /* ImageStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageStore.h; sourceTree = "<group>"; };
 		667FC6352499B72B00A36D3C /* ImageStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +90,9 @@
 			children = (
 				6629B3882498C6D2000E2713 /* DetailViewController.h */,
 				6629B3892498C6D2000E2713 /* DetailViewController.m */,
+				664483EA24A0D20900C7B551 /* Homepwner.xcdatamodeld */,
+				664483ED24A0D2E700C7B551 /* ImageTransformer.h */,
+				664483EE24A0D2E700C7B551 /* ImageTransformer.m */,
 				667FC6342499B72B00A36D3C /* ImageStore.h */,
 				667FC6352499B72B00A36D3C /* ImageStore.m */,
 				66447C5B24A04E8200C7B551 /* ItemCell.h */,
@@ -189,7 +197,9 @@
 				6629B37C2498656D000E2713 /* GZHItemsViewController.m in Sources */,
 				6629B363249861DB000E2713 /* AppDelegate.m in Sources */,
 				6629B38224986FA7000E2713 /* GZHItemStore.m in Sources */,
+				664483EC24A0D20900C7B551 /* Homepwner.xcdatamodeld in Sources */,
 				6629B37F24986E17000E2713 /* BNRItem.m in Sources */,
+				664483EF24A0D2E700C7B551 /* ImageTransformer.m in Sources */,
 				6629B374249861DE000E2713 /* main.m in Sources */,
 				6629B366249861DB000E2713 /* SceneDelegate.m in Sources */,
 				6629B38B2498C6D2000E2713 /* DetailViewController.m in Sources */,
@@ -383,6 +393,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		664483EA24A0D20900C7B551 /* Homepwner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				664483EB24A0D20900C7B551 /* Homepwner.xcdatamodel */,
+			);
+			currentVersion = 664483EB24A0D20900C7B551 /* Homepwner.xcdatamodel */;
+			path = Homepwner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6629B356249861DB000E2713 /* Project object */;
 }
