@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BNRAssetType" representedClassName="BNRAssetType" syncable="YES" codeGenerationType="class">
+        <attribute name="label" optional="YES" attributeType="String"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BNRItem" inverseName="assetType" inverseEntity="BNRItem"/>
+    </entity>
     <entity name="BNRItem" representedClassName="BNRItem" syncable="YES" codeGenerationType="class">
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="itemKey" optional="YES" attributeType="String"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
         <attribute name="serialNumber" optional="YES" attributeType="String"/>
-        <attribute name="thumbnail" optional="YES" attributeType="Transformable"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Transformable" valueTransformerName="ImageTransformer"/>
+        <relationship name="assetType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BNRAssetType" inverseName="items" inverseEntity="BNRAssetType"/>
     </entity>
     <elements>
-        <element name="BNRItem" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="BNRItem" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="BNRAssetType" positionX="-54" positionY="27" width="128" height="73"/>
     </elements>
 </model>

@@ -14,7 +14,6 @@
 		6629B371249861DE000E2713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6629B36F249861DE000E2713 /* LaunchScreen.storyboard */; };
 		6629B374249861DE000E2713 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6629B373249861DE000E2713 /* main.m */; };
 		6629B37C2498656D000E2713 /* GZHItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6629B37B2498656D000E2713 /* GZHItemsViewController.m */; };
-		6629B37F24986E17000E2713 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6629B37D24986E17000E2713 /* BNRItem.m */; };
 		6629B38224986FA7000E2713 /* GZHItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6629B38124986FA7000E2713 /* GZHItemStore.m */; };
 		6629B38B2498C6D2000E2713 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6629B3892498C6D2000E2713 /* DetailViewController.m */; };
 		6629B38C2498C6D2000E2713 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6629B38A2498C6D2000E2713 /* DetailViewController.xib */; };
@@ -23,6 +22,7 @@
 		664483BE24A089D100C7B551 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664483BD24A089D100C7B551 /* ImageViewController.m */; };
 		664483EC24A0D20900C7B551 /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 664483EA24A0D20900C7B551 /* Homepwner.xcdatamodeld */; };
 		664483EF24A0D2E700C7B551 /* ImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 664483EE24A0D2E700C7B551 /* ImageTransformer.m */; };
+		6644840324A0DCFC00C7B551 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644840224A0DCFC00C7B551 /* BNRItem.m */; };
 		667FC6362499B72B00A36D3C /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 667FC6352499B72B00A36D3C /* ImageStore.m */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +39,6 @@
 		6629B373249861DE000E2713 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6629B37A2498656D000E2713 /* GZHItemsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHItemsViewController.h; sourceTree = "<group>"; };
 		6629B37B2498656D000E2713 /* GZHItemsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHItemsViewController.m; sourceTree = "<group>"; };
-		6629B37D24986E17000E2713 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
-		6629B37E24986E17000E2713 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		6629B38024986FA7000E2713 /* GZHItemStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHItemStore.h; sourceTree = "<group>"; };
 		6629B38124986FA7000E2713 /* GZHItemStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHItemStore.m; sourceTree = "<group>"; };
 		6629B3882498C6D2000E2713 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -54,6 +52,9 @@
 		664483EB24A0D20900C7B551 /* Homepwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homepwner.xcdatamodel; sourceTree = "<group>"; };
 		664483ED24A0D2E700C7B551 /* ImageTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTransformer.h; sourceTree = "<group>"; };
 		664483EE24A0D2E700C7B551 /* ImageTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTransformer.m; sourceTree = "<group>"; };
+		664483F424A0DAD500C7B551 /* Homepwner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Homepwner-Bridging-Header.h"; sourceTree = "<group>"; };
+		6644840124A0DCFC00C7B551 /* BNRItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
+		6644840224A0DCFC00C7B551 /* BNRItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		667FC6342499B72B00A36D3C /* ImageStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageStore.h; sourceTree = "<group>"; };
 		667FC6352499B72B00A36D3C /* ImageStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +75,7 @@
 			children = (
 				6629B360249861DB000E2713 /* Homepwner */,
 				6629B35F249861DB000E2713 /* Products */,
+				664483F424A0DAD500C7B551 /* Homepwner-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +95,8 @@
 				664483EA24A0D20900C7B551 /* Homepwner.xcdatamodeld */,
 				664483ED24A0D2E700C7B551 /* ImageTransformer.h */,
 				664483EE24A0D2E700C7B551 /* ImageTransformer.m */,
+				6644840124A0DCFC00C7B551 /* BNRItem.h */,
+				6644840224A0DCFC00C7B551 /* BNRItem.m */,
 				667FC6342499B72B00A36D3C /* ImageStore.h */,
 				667FC6352499B72B00A36D3C /* ImageStore.m */,
 				66447C5B24A04E8200C7B551 /* ItemCell.h */,
@@ -101,8 +105,6 @@
 				6629B38A2498C6D2000E2713 /* DetailViewController.xib */,
 				6629B361249861DB000E2713 /* AppDelegate.h */,
 				6629B362249861DB000E2713 /* AppDelegate.m */,
-				6629B37E24986E17000E2713 /* BNRItem.h */,
-				6629B37D24986E17000E2713 /* BNRItem.m */,
 				6629B38024986FA7000E2713 /* GZHItemStore.h */,
 				6629B38124986FA7000E2713 /* GZHItemStore.m */,
 				6629B37A2498656D000E2713 /* GZHItemsViewController.h */,
@@ -151,6 +153,7 @@
 				TargetAttributes = {
 					6629B35D249861DB000E2713 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -193,12 +196,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				664483BE24A089D100C7B551 /* ImageViewController.m in Sources */,
+				6644840324A0DCFC00C7B551 /* BNRItem.m in Sources */,
 				66447C5D24A04E8200C7B551 /* ItemCell.m in Sources */,
 				6629B37C2498656D000E2713 /* GZHItemsViewController.m in Sources */,
 				6629B363249861DB000E2713 /* AppDelegate.m in Sources */,
 				6629B38224986FA7000E2713 /* GZHItemStore.m in Sources */,
 				664483EC24A0D20900C7B551 /* Homepwner.xcdatamodeld in Sources */,
-				6629B37F24986E17000E2713 /* BNRItem.m in Sources */,
 				664483EF24A0D2E700C7B551 /* ImageTransformer.m in Sources */,
 				6629B374249861DE000E2713 /* main.m in Sources */,
 				6629B366249861DB000E2713 /* SceneDelegate.m in Sources */,
@@ -343,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Homepwner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -351,6 +355,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.Homepwner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Homepwner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -359,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Homepwner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -367,6 +375,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.Homepwner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Homepwner-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
