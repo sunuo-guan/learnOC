@@ -48,11 +48,23 @@ void UIGraphicsEndImageContext(void);
 
 
 
-整体方法：先创建一个与待转换的view大小一致的位图（bitmap）的上下文（context），并将待转换的view的layer渲染到当前的上下文的layer中，再将当前的图形上下文内容返回到一个图像中。
+**整体思路：**先创建一个与待转换的view大小一致的位图（bitmap）的上下文（context），并将待转换的view的layer渲染到当前的上下文的layer中，再将当前的图形上下文内容返回到一个图像中。
 
 
 
-注意：传入的view必须要先设置frame属性，否则创建的位图（bitmap）的size会为0，从而转换失败。
+**注意：**传入的view必须要先设置frame属性，否则创建的位图（bitmap）的size会为0，从而转换失败。
+
+
+
+**关于图形上下文(Graphics Context)：**
+
+1. 图形上下文是一个CGContextRef类型的数据，图形上下文相当于画板，用于封装绘图信息(画了什么)和绘图状态(线条大小、颜色等)，它决定绘制的输出目标(绘制到什么地方去)，目标可以是PDF文件、bitmap或者显示器的窗口。
+
+2. 相同的一套绘图序列，指定不同的图形上下文，就可将相同的图像绘制到不同的目标上，目标可以是PDF文件、bitmap或者显示器的窗口。
+
+3. QuartZ 2D提供了 5 种类型的图形上下文：Bitmap Graphics Context、PDF Graphics Context、Window Graphics Context、Layer Context、Post Graphics Context。
+
+4. 在UIView中，系统会默认创建一个Layer Graphics Context，它对应UIView的layer属性，该图形上下文可以在drawRect:方法中获取，开发者只能获取，不能自己重新创建，在该图层上下文中绘制的图形，最终会通过CALayer显示出来。因此，View之所以能显示东西，完全是因为它内部的layer。
 
 
 
