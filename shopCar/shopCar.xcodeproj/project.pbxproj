@@ -15,6 +15,7 @@
 		6658528224B7093400B66283 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6658528024B7093400B66283 /* LaunchScreen.storyboard */; };
 		6658528524B7093400B66283 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6658528424B7093400B66283 /* main.m */; };
 		665861BD24B7159900B66283 /* mainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 665861BC24B7159900B66283 /* mainView.m */; };
+		665861C024B738E300B66283 /* commodityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 665861BF24B738E300B66283 /* commodityView.m */; };
 		C7198D2EB05E5B83F225847A /* libPods-shopCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC171D67C72688A5FE31FF2 /* libPods-shopCar.a */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 		6658528424B7093400B66283 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		665861BB24B7159900B66283 /* mainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainView.h; sourceTree = "<group>"; };
 		665861BC24B7159900B66283 /* mainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mainView.m; sourceTree = "<group>"; };
+		665861BE24B738E300B66283 /* commodityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = commodityView.h; path = Assets.xcassets/commodityView.h; sourceTree = "<group>"; };
+		665861BF24B738E300B66283 /* commodityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = commodityView.m; path = Assets.xcassets/commodityView.m; sourceTree = "<group>"; };
 		CBC171D67C72688A5FE31FF2 /* libPods-shopCar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-shopCar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +80,8 @@
 				6658527624B7093200B66283 /* SceneDelegate.m */,
 				6658527824B7093200B66283 /* ViewController.h */,
 				6658527924B7093200B66283 /* ViewController.m */,
+				665861BE24B738E300B66283 /* commodityView.h */,
+				665861BF24B738E300B66283 /* commodityView.m */,
 				665861BB24B7159900B66283 /* mainView.h */,
 				665861BC24B7159900B66283 /* mainView.m */,
 				6658527B24B7093200B66283 /* Main.storyboard */,
@@ -203,6 +208,7 @@
 			files = (
 				6658527A24B7093200B66283 /* ViewController.m in Sources */,
 				665861BD24B7159900B66283 /* mainView.m in Sources */,
+				665861C024B738E300B66283 /* commodityView.m in Sources */,
 				6658527424B7093200B66283 /* AppDelegate.m in Sources */,
 				6658528524B7093400B66283 /* main.m in Sources */,
 				6658527724B7093200B66283 /* SceneDelegate.m in Sources */,
@@ -346,7 +352,9 @@
 			baseConfigurationReference = 65A49673031311632032D721 /* Pods-shopCar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = shopCar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -354,6 +362,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.shopCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT}/**";
 			};
@@ -364,7 +373,9 @@
 			baseConfigurationReference = 3DA4CFAEC51F3557AA764EC1 /* Pods-shopCar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = shopCar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -372,6 +383,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.shopCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -8,6 +8,7 @@
 
 #import "mainView.h"
 #import <Masonry/Masonry.h>
+#import "commodityView.h"
 
 @interface mainView ()
 
@@ -31,12 +32,12 @@
 
 - (void)setupUI {
     [self.addButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        //make.size.mas_equalTo(CGSizeMake(50, 50));
+        make.size.mas_equalTo(CGSizeMake(100, 50));
         make.top.equalTo(self.mas_top).offset(100);
         make.left.equalTo(self.mas_left).offset(20);
     }];
     [self.delButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        //make.size.mas_equalTo(CGSizeMake(50, 50));
+        make.size.mas_equalTo(CGSizeMake(100, 50));
         make.top.equalTo(self.addButton.mas_top);
         make.right.equalTo(self.mas_right).offset(-20);
     }];
@@ -48,6 +49,49 @@
     }];
 }
 
+#pragma mark -- actions
+- (void)addCommodity {
+    CGFloat commodityWidth = 100.f;
+    CGFloat commodityHeight = 150.f;
+    CGFloat gapWidth = 10.f;
+    CGFloat dispalyViewWidth = [UIScreen mainScreen].bounds.size.width - 40;
+    CGFloat dispalyViewHeight = [UIScreen mainScreen].bounds.size.height - 30 - 100 - 30 - 50;
+    NSInteger columns = floor(dispalyViewWidth / (commodityWidth + gapWidth));
+    NSInteger rows = floor(dispalyViewHeight / (commodityHeight + gapWidth));
+    
+    commodityView *lastCommodity = self.displayView.subviews.lastObject;
+    commodityView *newCommodity = [[commodityView alloc] init];
+    [self.displayView addSubview:newCommodity];
+    NSInteger index = self.displayView.subviews.count;
+    if (index % columns == 1) {
+        [newCommodity mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(commodityWidth, commodityHeight));
+            make.left.equalTo(self.displayView.mas_left);
+            make.top.equalTo(self.displayView.mas_top).offset((commodityHeight + gapWidth) * (index / columns));
+        }];
+    } else {
+        [newCommodity mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(commodityWidth, commodityHeight));
+            make.left.equalTo(lastCommodity.mas_right).offset(gapWidth);
+            make.top.equalTo(lastCommodity.mas_top);
+        }];
+    }
+    
+    if (index == columns * rows) {
+        self.addButton.enabled = NO;
+    }
+    self.delButton.enabled = YES;
+}
+
+- (void)deleteCommodity {
+    commodityView *lastCommodity = self.displayView.subviews.lastObject;
+    [lastCommodity removeFromSuperview];
+    if (self.displayView.subviews.count == 0) {
+        self.delButton.enabled = NO;
+    }
+    self.addButton.enabled = YES;
+}
+
 #pragma mark -- getter & setter
 - (UIButton *)addButton {
     if (!_addButton) {
@@ -55,6 +99,8 @@
         [_addButton setTitle:@"添加商品" forState:UIControlStateNormal];
         [_addButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_addButton setBackgroundColor:[UIColor orangeColor]];
+        _addButton.enabled = YES;
+        [_addButton addTarget:self action:@selector(addCommodity) forControlEvents:UIControlEventTouchUpInside];
     }
     return _addButton;
 }
@@ -65,6 +111,9 @@
         [_delButton setTitle:@"删除商品" forState:UIControlStateNormal];
         [_delButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_delButton setBackgroundColor:[UIColor orangeColor]];
+        _delButton.enabled = NO;
+        //监听按钮的点击事件
+        [_delButton addTarget:self action:@selector(deleteCommodity) forControlEvents:UIControlEventTouchUpInside];
     }
     return _delButton;
 }
