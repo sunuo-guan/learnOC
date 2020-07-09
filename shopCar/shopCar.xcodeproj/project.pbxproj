@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6658527424B7093200B66283 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6658527324B7093200B66283 /* AppDelegate.m */; };
+		6658527724B7093200B66283 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6658527624B7093200B66283 /* SceneDelegate.m */; };
+		6658527A24B7093200B66283 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6658527924B7093200B66283 /* ViewController.m */; };
+		6658527D24B7093200B66283 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6658527B24B7093200B66283 /* Main.storyboard */; };
+		6658527F24B7093400B66283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6658527E24B7093400B66283 /* Assets.xcassets */; };
+		6658528224B7093400B66283 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6658528024B7093400B66283 /* LaunchScreen.storyboard */; };
+		6658528524B7093400B66283 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6658528424B7093400B66283 /* main.m */; };
+		665861BD24B7159900B66283 /* mainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 665861BC24B7159900B66283 /* mainView.m */; };
+		C7198D2EB05E5B83F225847A /* libPods-shopCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC171D67C72688A5FE31FF2 /* libPods-shopCar.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3DA4CFAEC51F3557AA764EC1 /* Pods-shopCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopCar.release.xcconfig"; path = "Target Support Files/Pods-shopCar/Pods-shopCar.release.xcconfig"; sourceTree = "<group>"; };
+		65A49673031311632032D721 /* Pods-shopCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopCar.debug.xcconfig"; path = "Target Support Files/Pods-shopCar/Pods-shopCar.debug.xcconfig"; sourceTree = "<group>"; };
+		6658526F24B7093200B66283 /* shopCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shopCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6658527224B7093200B66283 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6658527324B7093200B66283 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6658527524B7093200B66283 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		6658527624B7093200B66283 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		6658527824B7093200B66283 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6658527924B7093200B66283 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6658527C24B7093200B66283 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6658527E24B7093400B66283 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6658528124B7093400B66283 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6658528324B7093400B66283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6658528424B7093400B66283 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		665861BB24B7159900B66283 /* mainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainView.h; sourceTree = "<group>"; };
+		665861BC24B7159900B66283 /* mainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mainView.m; sourceTree = "<group>"; };
+		CBC171D67C72688A5FE31FF2 /* libPods-shopCar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-shopCar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6658526C24B7093200B66283 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7198D2EB05E5B83F225847A /* libPods-shopCar.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6658526624B7093200B66283 = {
+			isa = PBXGroup;
+			children = (
+				6658527124B7093200B66283 /* shopCar */,
+				6658527024B7093200B66283 /* Products */,
+				E82BA5C777DCE5D447E1F5FB /* Pods */,
+				DB3FFA465830595A76CC47AC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6658527024B7093200B66283 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6658526F24B7093200B66283 /* shopCar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6658527124B7093200B66283 /* shopCar */ = {
+			isa = PBXGroup;
+			children = (
+				6658527224B7093200B66283 /* AppDelegate.h */,
+				6658527324B7093200B66283 /* AppDelegate.m */,
+				6658527524B7093200B66283 /* SceneDelegate.h */,
+				6658527624B7093200B66283 /* SceneDelegate.m */,
+				6658527824B7093200B66283 /* ViewController.h */,
+				6658527924B7093200B66283 /* ViewController.m */,
+				665861BB24B7159900B66283 /* mainView.h */,
+				665861BC24B7159900B66283 /* mainView.m */,
+				6658527B24B7093200B66283 /* Main.storyboard */,
+				6658527E24B7093400B66283 /* Assets.xcassets */,
+				6658528024B7093400B66283 /* LaunchScreen.storyboard */,
+				6658528324B7093400B66283 /* Info.plist */,
+				6658528424B7093400B66283 /* main.m */,
+			);
+			path = shopCar;
+			sourceTree = "<group>";
+		};
+		DB3FFA465830595A76CC47AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBC171D67C72688A5FE31FF2 /* libPods-shopCar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E82BA5C777DCE5D447E1F5FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65A49673031311632032D721 /* Pods-shopCar.debug.xcconfig */,
+				3DA4CFAEC51F3557AA764EC1 /* Pods-shopCar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6658526E24B7093200B66283 /* shopCar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6658528824B7093400B66283 /* Build configuration list for PBXNativeTarget "shopCar" */;
+			buildPhases = (
+				ED1D1380FF283D8846B2E170 /* [CP] Check Pods Manifest.lock */,
+				6658526B24B7093200B66283 /* Sources */,
+				6658526C24B7093200B66283 /* Frameworks */,
+				6658526D24B7093200B66283 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = shopCar;
+			productName = shopCar;
+			productReference = 6658526F24B7093200B66283 /* shopCar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6658526724B7093200B66283 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = guanzhihao;
+				TargetAttributes = {
+					6658526E24B7093200B66283 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 6658526A24B7093200B66283 /* Build configuration list for PBXProject "shopCar" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6658526624B7093200B66283;
+			productRefGroup = 6658527024B7093200B66283 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6658526E24B7093200B66283 /* shopCar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6658526D24B7093200B66283 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6658528224B7093400B66283 /* LaunchScreen.storyboard in Resources */,
+				6658527F24B7093400B66283 /* Assets.xcassets in Resources */,
+				6658527D24B7093200B66283 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ED1D1380FF283D8846B2E170 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-shopCar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6658526B24B7093200B66283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6658527A24B7093200B66283 /* ViewController.m in Sources */,
+				665861BD24B7159900B66283 /* mainView.m in Sources */,
+				6658527424B7093200B66283 /* AppDelegate.m in Sources */,
+				6658528524B7093400B66283 /* main.m in Sources */,
+				6658527724B7093200B66283 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6658527B24B7093200B66283 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6658527C24B7093200B66283 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6658528024B7093400B66283 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6658528124B7093400B66283 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6658528624B7093400B66283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6658528724B7093400B66283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6658528924B7093400B66283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65A49673031311632032D721 /* Pods-shopCar.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shopCar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.shopCar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT}/**";
+			};
+			name = Debug;
+		};
+		6658528A24B7093400B66283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DA4CFAEC51F3557AA764EC1 /* Pods-shopCar.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = shopCar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.shopCar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6658526A24B7093200B66283 /* Build configuration list for PBXProject "shopCar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6658528624B7093400B66283 /* Debug */,
+				6658528724B7093400B66283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6658528824B7093400B66283 /* Build configuration list for PBXNativeTarget "shopCar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6658528924B7093400B66283 /* Debug */,
+				6658528A24B7093400B66283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6658526724B7093200B66283 /* Project object */;
+}
