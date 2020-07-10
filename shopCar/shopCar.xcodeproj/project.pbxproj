@@ -16,6 +16,8 @@
 		6658528524B7093400B66283 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6658528424B7093400B66283 /* main.m */; };
 		665861BD24B7159900B66283 /* mainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 665861BC24B7159900B66283 /* mainView.m */; };
 		665861C024B738E300B66283 /* commodityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 665861BF24B738E300B66283 /* commodityView.m */; };
+		66D8292D24B84C86000E849B /* commodityResource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66D8292C24B84C86000E849B /* commodityResource.plist */; };
+		66D8293324B84D90000E849B /* GZHCommodityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8293224B84D90000E849B /* GZHCommodityModel.m */; };
 		C7198D2EB05E5B83F225847A /* libPods-shopCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC171D67C72688A5FE31FF2 /* libPods-shopCar.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,9 @@
 		665861BC24B7159900B66283 /* mainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mainView.m; sourceTree = "<group>"; };
 		665861BE24B738E300B66283 /* commodityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = commodityView.h; path = Assets.xcassets/commodityView.h; sourceTree = "<group>"; };
 		665861BF24B738E300B66283 /* commodityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = commodityView.m; path = Assets.xcassets/commodityView.m; sourceTree = "<group>"; };
+		66D8292C24B84C86000E849B /* commodityResource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = commodityResource.plist; sourceTree = "<group>"; };
+		66D8293124B84D90000E849B /* GZHCommodityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHCommodityModel.h; sourceTree = "<group>"; };
+		66D8293224B84D90000E849B /* GZHCommodityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHCommodityModel.m; sourceTree = "<group>"; };
 		CBC171D67C72688A5FE31FF2 /* libPods-shopCar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-shopCar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,8 +92,11 @@
 				6658527B24B7093200B66283 /* Main.storyboard */,
 				6658527E24B7093400B66283 /* Assets.xcassets */,
 				6658528024B7093400B66283 /* LaunchScreen.storyboard */,
+				66D8292C24B84C86000E849B /* commodityResource.plist */,
 				6658528324B7093400B66283 /* Info.plist */,
 				6658528424B7093400B66283 /* main.m */,
+				66D8293124B84D90000E849B /* GZHCommodityModel.h */,
+				66D8293224B84D90000E849B /* GZHCommodityModel.m */,
 			);
 			path = shopCar;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 		6658526724B7093200B66283 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GZH;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = guanzhihao;
 				TargetAttributes = {
@@ -170,6 +179,7 @@
 			files = (
 				6658528224B7093400B66283 /* LaunchScreen.storyboard in Resources */,
 				6658527F24B7093400B66283 /* Assets.xcassets in Resources */,
+				66D8292D24B84C86000E849B /* commodityResource.plist in Resources */,
 				6658527D24B7093200B66283 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +219,7 @@
 				6658527A24B7093200B66283 /* ViewController.m in Sources */,
 				665861BD24B7159900B66283 /* mainView.m in Sources */,
 				665861C024B738E300B66283 /* commodityView.m in Sources */,
+				66D8293324B84D90000E849B /* GZHCommodityModel.m in Sources */,
 				6658527424B7093200B66283 /* AppDelegate.m in Sources */,
 				6658528524B7093400B66283 /* main.m in Sources */,
 				6658527724B7093200B66283 /* SceneDelegate.m in Sources */,

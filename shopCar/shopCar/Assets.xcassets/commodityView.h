@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GZHCommodityModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface commodityView : UIView
+
+@property (nonatomic, strong) GZHCommodityModel *commodity;
+
+//传数据模型
+- (void)setCommodity:(GZHCommodityModel *)commodity;
 
 @end
 

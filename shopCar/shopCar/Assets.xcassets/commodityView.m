@@ -44,6 +44,12 @@
 }
 
 #pragma mark -- getter & setter
+- (void)setCommodity:(GZHCommodityModel *)commodity {
+    _commodity = commodity;
+    self.commodityImage.image = [UIImage imageNamed:commodity.icon];
+    self.commodityName.text = commodity.name;
+}
+
 - (UIImageView *)commodityImage {
     if (!_commodityImage) {
         _commodityImage = [[UIImageView alloc] init];
@@ -56,6 +62,7 @@
     if (!_commodityName) {
         _commodityName = [[UILabel alloc] init];
         _commodityName.font = [UIFont systemFontOfSize:15.f];
+        _commodityName.textAlignment = NSTextAlignmentCenter;
         _commodityName.backgroundColor = [UIColor clearColor];
     }
     return _commodityName;

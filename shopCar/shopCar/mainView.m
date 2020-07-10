@@ -9,12 +9,14 @@
 #import "mainView.h"
 #import <Masonry/Masonry.h>
 #import "commodityView.h"
+#import "GZHCommodityModel.h"
 
 @interface mainView ()
 
 @property (nonatomic, strong) UIButton *addButton;
 @property (nonatomic, strong) UIButton *delButton;
 @property (nonatomic, strong) UIView *displayView;
+@property (nonatomic, strong) NSArray *dataArr;
 
 @end
 
@@ -59,21 +61,24 @@
     NSInteger columns = floor(dispalyViewWidth / (commodityWidth + gapWidth));
     NSInteger rows = floor(dispalyViewHeight / (commodityHeight + gapWidth));
     
-    commodityView *lastCommodity = self.displayView.subviews.lastObject;
-    commodityView *newCommodity = [[commodityView alloc] init];
-    [self.displayView addSubview:newCommodity];
+    commodityView *lastCommodityView = self.displayView.subviews.lastObject;
+    commodityView *newCommodityView = [[commodityView alloc] init];
+    [self.displayView addSubview:newCommodityView];
     NSInteger index = self.displayView.subviews.count;
+    NSInteger random = arc4random() % 6;
+    GZHCommodityModel *commodity = self.dataArr[random];
+    [newCommodityView setCommodity:commodity];
     if (index % columns == 1) {
-        [newCommodity mas_makeConstraints:^(MASConstraintMaker *make) {
+        [newCommodityView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(commodityWidth, commodityHeight));
             make.left.equalTo(self.displayView.mas_left);
             make.top.equalTo(self.displayView.mas_top).offset((commodityHeight + gapWidth) * (index / columns));
         }];
     } else {
-        [newCommodity mas_makeConstraints:^(MASConstraintMaker *make) {
+        [newCommodityView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(commodityWidth, commodityHeight));
-            make.left.equalTo(lastCommodity.mas_right).offset(gapWidth);
-            make.top.equalTo(lastCommodity.mas_top);
+            make.left.equalTo(lastCommodityView.mas_right).offset(gapWidth);
+            make.top.equalTo(lastCommodityView.mas_top);
         }];
     }
     
@@ -124,6 +129,20 @@
         _displayView.backgroundColor = [UIColor yellowColor];
     }
     return _displayView;
+}
+
+- (NSArray *)dataArr {
+    if (!_dataArr) {
+        NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"commodityResource.plist" ofType:nil];
+        _dataArr = [NSArray arrayWithContentsOfFile:dataPath];
+        NSMutableArray *modelArr = [NSMutableArray array];
+        for (NSDictionary *dict in _dataArr) {
+            GZHCommodityModel *commodity = [GZHCommodityModel shopWithDictionary:dict];
+            [modelArr addObject:commodity];
+        }
+        _dataArr = modelArr;
+    }
+    return _dataArr;
 }
 
 @end
