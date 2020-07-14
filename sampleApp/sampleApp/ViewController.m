@@ -14,6 +14,16 @@
 
 @implementation ViewController 
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.tabBarItem.title = @"新闻";
+        self.tabBarItem.image = nil;
+        self.tabBarItem.selectedImage = nil;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

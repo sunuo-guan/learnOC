@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66D50E1024BDEC3300BF7052 /* GZHVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D50E0F24BDEC3300BF7052 /* GZHVideoViewController.m */; };
 		66D5FD0924BD8D7900BF7052 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD0824BD8D7900BF7052 /* AppDelegate.m */; };
 		66D5FD0C24BD8D7900BF7052 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD0B24BD8D7900BF7052 /* SceneDelegate.m */; };
 		66D5FD0F24BD8D7900BF7052 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD0E24BD8D7900BF7052 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66D50E0E24BDEC3300BF7052 /* GZHVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHVideoViewController.h; sourceTree = "<group>"; };
+		66D50E0F24BDEC3300BF7052 /* GZHVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHVideoViewController.m; sourceTree = "<group>"; };
 		66D5FD0424BD8D7900BF7052 /* sampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D5FD0724BD8D7900BF7052 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66D5FD0824BD8D7900BF7052 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 				66D5FD1524BD8D7C00BF7052 /* LaunchScreen.storyboard */,
 				66D5FD1824BD8D7C00BF7052 /* Info.plist */,
 				66D5FD1924BD8D7C00BF7052 /* main.m */,
+				66D50E0E24BDEC3300BF7052 /* GZHVideoViewController.h */,
+				66D50E0F24BDEC3300BF7052 /* GZHVideoViewController.m */,
 			);
 			path = sampleApp;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 		66D5FCFC24BD8D7900BF7052 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GZH;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = guanzhihao;
 				TargetAttributes = {
@@ -149,6 +155,7 @@
 				66D5FD0F24BD8D7900BF7052 /* ViewController.m in Sources */,
 				66D5FD0924BD8D7900BF7052 /* AppDelegate.m in Sources */,
 				66D5FD1A24BD8D7C00BF7052 /* main.m in Sources */,
+				66D50E1024BDEC3300BF7052 /* GZHVideoViewController.m in Sources */,
 				66D5FD0C24BD8D7900BF7052 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

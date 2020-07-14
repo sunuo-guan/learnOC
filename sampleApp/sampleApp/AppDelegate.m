@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "GZHVideoViewController.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -24,12 +25,7 @@
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:tbc];
     
     ViewController *vc0 = [[ViewController alloc] init];
-    vc0.view.backgroundColor = [UIColor whiteColor];
-    vc0.tabBarItem.title = @"新闻";
-    
-    UIViewController *vc1 = [[UIViewController alloc] init];
-    vc1.view.backgroundColor = [UIColor whiteColor];
-    vc1.tabBarItem.title = @"视频";
+    GZHVideoViewController *vc1 = [[GZHVideoViewController alloc] init];
     
     UIViewController *vc2 = [[UIViewController alloc] init];
     vc2.view.backgroundColor = [UIColor whiteColor];
@@ -39,8 +35,7 @@
     vc3.view.backgroundColor = [UIColor whiteColor];
     vc3.tabBarItem.title = @"我的";
     
-    [tbc setViewControllers:@[vc0,vc2,vc1,vc3]];
-    
+    [tbc setViewControllers:@[vc0,vc1,vc2,vc3]];
     tbc.delegate = self;
     
     [self.window setRootViewController:nc];
