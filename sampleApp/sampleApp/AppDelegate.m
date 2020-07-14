@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
 
@@ -28,14 +28,18 @@
     vc0.tabBarItem.title = @"新闻";
     
     UIViewController *vc1 = [[UIViewController alloc] init];
-    vc1.view.backgroundColor = [UIColor redColor];
+    vc1.view.backgroundColor = [UIColor whiteColor];
     vc1.tabBarItem.title = @"视频";
     
     UIViewController *vc2 = [[UIViewController alloc] init];
-    vc2.view.backgroundColor = [UIColor greenColor];
+    vc2.view.backgroundColor = [UIColor whiteColor];
     vc2.tabBarItem.title = @"推荐";
     
-    [tbc setViewControllers:@[vc0,vc2,vc1]];
+    UIViewController *vc3 = [[UIViewController alloc] init];
+    vc3.view.backgroundColor = [UIColor whiteColor];
+    vc3.tabBarItem.title = @"我的";
+    
+    [tbc setViewControllers:@[vc0,vc2,vc1,vc3]];
     
     tbc.delegate = self;
     
