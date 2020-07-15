@@ -29,6 +29,7 @@
         [self addSubview:self.sourceLabel];
         [self addSubview:self.commandLabel];
         [self addSubview:self.timeLabel];
+        [self addSubview:self.rightImageView];
         [self setupUI];
     }
     return self;
@@ -129,7 +130,7 @@
     return _timeLabel;
 }
 
-- (UIImageView *)imageView {
+- (UIImageView *)rightImageView {
     if (!_rightImageView) {
         _rightImageView = [[UIImageView alloc] init];
         _rightImageView.backgroundColor = [UIColor clearColor];
