@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "GZHVideoViewController.h"
+#import "GZHRecommendViewController.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -26,10 +27,7 @@
     
     ViewController *vc0 = [[ViewController alloc] init];
     GZHVideoViewController *vc1 = [[GZHVideoViewController alloc] init];
-    
-    UIViewController *vc2 = [[UIViewController alloc] init];
-    vc2.view.backgroundColor = [UIColor whiteColor];
-    vc2.tabBarItem.title = @"推荐";
+    GZHRecommendViewController *vc2 = [[GZHRecommendViewController alloc] init];
     
     UIViewController *vc3 = [[UIViewController alloc] init];
     vc3.view.backgroundColor = [UIColor whiteColor];
