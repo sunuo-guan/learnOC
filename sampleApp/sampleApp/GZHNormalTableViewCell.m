@@ -16,6 +16,8 @@
 @property (nonatomic, strong) UILabel *commandLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
 
+@property (nonatomic, strong) UIImageView *rightImageView;
+
 @end
 
 @implementation GZHNormalTableViewCell
@@ -34,9 +36,14 @@
 
 - (void)setupUI {
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(300, 50));
+        make.size.mas_equalTo(CGSizeMake(250, 50));
         make.left.equalTo(self.mas_left).offset(20);
         make.top.equalTo(self.mas_top).offset(15);
+    }];
+    [self.rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(70, 70));
+        make.top.equalTo(self.titleLabel);
+        make.left.equalTo(self.titleLabel.mas_right).offset(10);
     }];
     [self.sourceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         //make.size.mas_equalTo(CGSizeMake(50, 20));
@@ -61,6 +68,7 @@
     self.sourceLabel.text = @"掘金";
     self.commandLabel.text = @"阅读 5162";
     self.timeLabel.text = @"2017年04月10日";
+    self.rightImageView.image = [UIImage imageNamed:@"testImage"];
     
     //自动布局情况下sizeToFit麻烦了，特定情况下可以使用
 //    self.sourceLabel.text = @"掘金";
@@ -119,6 +127,15 @@
         _timeLabel.textColor = [UIColor blackColor];
     }
     return _timeLabel;
+}
+
+- (UIImageView *)imageView {
+    if (!_rightImageView) {
+        _rightImageView = [[UIImageView alloc] init];
+        _rightImageView.backgroundColor = [UIColor clearColor];
+        _rightImageView.contentMode = UIViewContentModeScaleToFill;
+    }
+    return _rightImageView;
 }
 
 @end
