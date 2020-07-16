@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) UIImageView *rightImageView;
 
+@property (nonatomic, strong) UIButton *buttonItem;
+
 @end
 
 @implementation GZHNormalTableViewCell
@@ -30,6 +32,7 @@
         [self addSubview:self.commandLabel];
         [self addSubview:self.timeLabel];
         [self addSubview:self.rightImageView];
+        [self addSubview:self.buttonItem];
         [self setupUI];
     }
     return self;
@@ -61,6 +64,11 @@
         make.left.equalTo(self.commandLabel.mas_right).offset(10);
         make.top.equalTo(self.commandLabel.mas_top);
     }];
+    [self.buttonItem mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(50, 20));
+        make.bottom.equalTo(self.sourceLabel.mas_bottom);
+        make.right.equalTo(self.rightImageView.mas_left).offset(-10);
+    }];
 }
 
 //传入model，根据model的数据调整布局
@@ -87,6 +95,10 @@
 //    [self.timeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
 //        make.size.mas_equalTo(CGSizeMake(self.timeLabel.frame.size.width, 20));
 //    }];
+}
+
+- (void)delectButtonClick {
+    NSLog(@"delete it");
 }
 
 #pragma mark -- getter & setter
@@ -137,6 +149,17 @@
         _rightImageView.contentMode = UIViewContentModeScaleToFill;
     }
     return _rightImageView;
+}
+
+- (UIButton *)buttonItem {
+    if (!_buttonItem) {
+        _buttonItem = [[UIButton alloc] init];
+        [_buttonItem setTitle:@"x" forState:UIControlStateNormal];
+        [_buttonItem setTitle:@"v" forState:UIControlStateHighlighted];
+        [_buttonItem addTarget:self action:@selector(delectButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        _buttonItem.backgroundColor = [UIColor purpleColor];
+    }
+    return _buttonItem;
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import "GZHRecommendViewController.h"
 
-@interface GZHRecommendViewController () <UIScrollViewDelegate>
+@interface GZHRecommendViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @end
 
@@ -39,6 +39,12 @@
     for (int i = 0; i < 5; i++) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i * self.view.bounds.size.width, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
         view.backgroundColor = colorArr[i];
+        UIView *clickView = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 50, 50)];
+        clickView.backgroundColor = [UIColor blackColor];
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewClick)];
+        tapGesture.delegate = self;
+        [clickView addGestureRecognizer:tapGesture];
+        [view addSubview:clickView];
         [scrollView addSubview:view];
     }
     
@@ -48,6 +54,14 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSLog(@"contentOffset.x = %f", scrollView.contentOffset.x);
+}
+
+- (void)viewClick {
+    NSLog(@"help");
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return YES;
 }
 
 @end
