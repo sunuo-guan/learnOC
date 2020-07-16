@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "GZHNormalTableViewCell.h"
+#import "GZHDetailViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -54,7 +55,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *vc = [[UIViewController alloc] init];
+    GZHDetailViewController *vc = [[GZHDetailViewController alloc] init];
     vc.view.backgroundColor = [UIColor whiteColor];
     vc.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
     [self.navigationController pushViewController:vc animated:YES];

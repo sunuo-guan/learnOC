@@ -11,6 +11,7 @@
 		66D50E1024BDEC3300BF7052 /* GZHVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D50E0F24BDEC3300BF7052 /* GZHVideoViewController.m */; };
 		66D50E1324BEB4AB00BF7052 /* GZHRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D50E1224BEB4AB00BF7052 /* GZHRecommendViewController.m */; };
 		66D50E1624BEE73500BF7052 /* GZHNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D50E1524BEE73500BF7052 /* GZHNormalTableViewCell.m */; };
+		66D541BB24C031F200BF7052 /* GZHDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D541BA24C031F200BF7052 /* GZHDetailViewController.m */; };
 		66D5FD0924BD8D7900BF7052 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD0824BD8D7900BF7052 /* AppDelegate.m */; };
 		66D5FD0C24BD8D7900BF7052 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD0B24BD8D7900BF7052 /* SceneDelegate.m */; };
 		66D5FD0F24BD8D7900BF7052 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD0E24BD8D7900BF7052 /* ViewController.m */; };
@@ -29,6 +30,8 @@
 		66D50E1224BEB4AB00BF7052 /* GZHRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHRecommendViewController.m; sourceTree = "<group>"; };
 		66D50E1424BEE73500BF7052 /* GZHNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHNormalTableViewCell.h; sourceTree = "<group>"; };
 		66D50E1524BEE73500BF7052 /* GZHNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHNormalTableViewCell.m; sourceTree = "<group>"; };
+		66D541B924C031F200BF7052 /* GZHDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHDetailViewController.h; sourceTree = "<group>"; };
+		66D541BA24C031F200BF7052 /* GZHDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHDetailViewController.m; sourceTree = "<group>"; };
 		66D5FD0424BD8D7900BF7052 /* sampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D5FD0724BD8D7900BF7052 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66D5FD0824BD8D7900BF7052 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				66D50E1224BEB4AB00BF7052 /* GZHRecommendViewController.m */,
 				66D50E1424BEE73500BF7052 /* GZHNormalTableViewCell.h */,
 				66D50E1524BEE73500BF7052 /* GZHNormalTableViewCell.m */,
+				66D541B924C031F200BF7052 /* GZHDetailViewController.h */,
+				66D541BA24C031F200BF7052 /* GZHDetailViewController.m */,
 			);
 			path = sampleApp;
 			sourceTree = "<group>";
@@ -112,7 +117,6 @@
 				3D0D2C079102A76403865D03 /* Pods-sampleApp.debug.xcconfig */,
 				7A68BEAB52BD0ABB8FBB65CF /* Pods-sampleApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -220,6 +224,7 @@
 				66D50E1024BDEC3300BF7052 /* GZHVideoViewController.m in Sources */,
 				66D50E1624BEE73500BF7052 /* GZHNormalTableViewCell.m in Sources */,
 				66D5FD0C24BD8D7900BF7052 /* SceneDelegate.m in Sources */,
+				66D541BB24C031F200BF7052 /* GZHDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
