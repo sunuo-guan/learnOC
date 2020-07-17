@@ -98,14 +98,17 @@
 }
 
 - (void)delectButtonClick {
-    NSLog(@"delete it");
+    //respondsToSelector:用来判断某一个方法是否有实现
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]) {
+        [self.delegate tableViewCell:self clickDeleteButton:self.buttonItem];
+    }
 }
 
 #pragma mark -- getter & setter
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.backgroundColor = [UIColor redColor];
+        _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.font = [UIFont systemFontOfSize:16];
         _titleLabel.textColor = [UIColor blackColor];
     }
@@ -115,7 +118,7 @@
 - (UILabel *)sourceLabel {
     if (!_sourceLabel) {
         _sourceLabel = [[UILabel alloc] init];
-        _sourceLabel.backgroundColor = [UIColor redColor];
+        _sourceLabel.backgroundColor = [UIColor clearColor];
         _sourceLabel.font = [UIFont systemFontOfSize:12];
         _sourceLabel.textColor = [UIColor blackColor];
     }
@@ -125,7 +128,7 @@
 - (UILabel *)commandLabel {
     if (!_commandLabel) {
         _commandLabel = [[UILabel alloc] init];
-        _commandLabel.backgroundColor = [UIColor redColor];
+        _commandLabel.backgroundColor = [UIColor clearColor];
         _commandLabel.font = [UIFont systemFontOfSize:12];
         _commandLabel.textColor = [UIColor blackColor];
     }
@@ -135,7 +138,7 @@
 - (UILabel *)timeLabel {
     if (!_timeLabel) {
         _timeLabel = [[UILabel alloc] init];
-        _timeLabel.backgroundColor = [UIColor redColor];
+        _timeLabel.backgroundColor = [UIColor clearColor];
         _timeLabel.font = [UIFont systemFontOfSize:12];
         _timeLabel.textColor = [UIColor blackColor];
     }
@@ -157,7 +160,12 @@
         [_buttonItem setTitle:@"x" forState:UIControlStateNormal];
         [_buttonItem setTitle:@"v" forState:UIControlStateHighlighted];
         [_buttonItem addTarget:self action:@selector(delectButtonClick) forControlEvents:UIControlEventTouchUpInside];
-        _buttonItem.backgroundColor = [UIColor purpleColor];
+        //_buttonItem.backgroundColor = [UIColor purpleColor];
+        _buttonItem.layer.cornerRadius = 10;
+        //masksToBoinds属性为YES时候，其作用是剪去子图层（UIImage）超出主图层（CALayer）的部分
+        _buttonItem.layer.masksToBounds = YES;
+        _buttonItem.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        _buttonItem.layer.borderWidth = 1;
     }
     return _buttonItem;
 }

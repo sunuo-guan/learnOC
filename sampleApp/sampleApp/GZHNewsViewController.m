@@ -6,15 +6,16 @@
 //  Copyright © 2020 guanzhihao. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GZHNewsViewController.h"
 #import "GZHNormalTableViewCell.h"
 #import "GZHDetailViewController.h"
+#import "GZHDeleteCellView.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface GZHNewsViewController () <UITableViewDataSource, UITableViewDelegate, GZHNormalTableViewCellDelegate>
 
 @end
 
-@implementation ViewController 
+@implementation GZHNewsViewController 
 
 - (instancetype)init {
     self = [super init];
@@ -49,6 +50,7 @@
     GZHNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if (!cell) {
         cell = [[GZHNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell.delegate = self;
     }
     [cell layoutTableViewCell];
     return cell;
@@ -59,6 +61,12 @@
     vc.view.backgroundColor = [UIColor whiteColor];
     vc.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
+    GZHDeleteCellView *deleteCellView = [[GZHDeleteCellView alloc] initWithFrame:self.view.bounds];
+    [deleteCellView showDeleteView];
+    
 }
 
 @end

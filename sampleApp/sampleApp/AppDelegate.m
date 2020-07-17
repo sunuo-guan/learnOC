@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "GZHNewsViewController.h"
 #import "GZHVideoViewController.h"
 #import "GZHRecommendViewController.h"
 
@@ -25,7 +25,7 @@
     UITabBarController *tbc = [[UITabBarController alloc] init];
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:tbc];
     
-    ViewController *vc0 = [[ViewController alloc] init];
+    GZHNewsViewController *vc0 = [[GZHNewsViewController alloc] init];
     GZHVideoViewController *vc1 = [[GZHVideoViewController alloc] init];
     GZHRecommendViewController *vc2 = [[GZHRecommendViewController alloc] init];
     
