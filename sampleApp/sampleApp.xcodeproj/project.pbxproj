@@ -14,7 +14,6 @@
 		66D541BB24C031F200BF7052 /* GZHDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D541BA24C031F200BF7052 /* GZHDetailViewController.m */; };
 		66D5549E24C0832000BF7052 /* GZHDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5549D24C0832000BF7052 /* GZHDeleteCellView.m */; };
 		66D5FD0924BD8D7900BF7052 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD0824BD8D7900BF7052 /* AppDelegate.m */; };
-		66D5FD0C24BD8D7900BF7052 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD0B24BD8D7900BF7052 /* SceneDelegate.m */; };
 		66D5FD0F24BD8D7900BF7052 /* GZHNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD0E24BD8D7900BF7052 /* GZHNewsViewController.m */; };
 		66D5FD1224BD8D7900BF7052 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D5FD1024BD8D7900BF7052 /* Main.storyboard */; };
 		66D5FD1424BD8D7C00BF7052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66D5FD1324BD8D7C00BF7052 /* Assets.xcassets */; };
@@ -38,8 +37,6 @@
 		66D5FD0424BD8D7900BF7052 /* sampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D5FD0724BD8D7900BF7052 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66D5FD0824BD8D7900BF7052 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		66D5FD0A24BD8D7900BF7052 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		66D5FD0B24BD8D7900BF7052 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		66D5FD0D24BD8D7900BF7052 /* GZHNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHNewsViewController.h; sourceTree = "<group>"; };
 		66D5FD0E24BD8D7900BF7052 /* GZHNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHNewsViewController.m; sourceTree = "<group>"; };
 		66D5FD1124BD8D7900BF7052 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +59,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		669EF55324C18FBD00DE5765 /* newsController */ = {
+			isa = PBXGroup;
+			children = (
+				66D5FD0D24BD8D7900BF7052 /* GZHNewsViewController.h */,
+				66D5FD0E24BD8D7900BF7052 /* GZHNewsViewController.m */,
+				66D541B924C031F200BF7052 /* GZHDetailViewController.h */,
+				66D541BA24C031F200BF7052 /* GZHDetailViewController.m */,
+				66D5549C24C0832000BF7052 /* GZHDeleteCellView.h */,
+				66D5549D24C0832000BF7052 /* GZHDeleteCellView.m */,
+				66D50E1424BEE73500BF7052 /* GZHNormalTableViewCell.h */,
+				66D50E1524BEE73500BF7052 /* GZHNormalTableViewCell.m */,
+			);
+			path = newsController;
+			sourceTree = "<group>";
+		};
+		669EF55424C1941400DE5765 /* videoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				66D50E0E24BDEC3300BF7052 /* GZHVideoViewController.h */,
+				66D50E0F24BDEC3300BF7052 /* GZHVideoViewController.m */,
+			);
+			path = videoViewController;
+			sourceTree = "<group>";
+		};
+		669EF55524C1945E00DE5765 /* recommendViewController */ = {
+			isa = PBXGroup;
+			children = (
+				66D50E1124BEB4AB00BF7052 /* GZHRecommendViewController.h */,
+				66D50E1224BEB4AB00BF7052 /* GZHRecommendViewController.m */,
+			);
+			path = recommendViewController;
+			sourceTree = "<group>";
+		};
 		66D5FCFB24BD8D7900BF7052 = {
 			isa = PBXGroup;
 			children = (
@@ -83,27 +113,16 @@
 		66D5FD0624BD8D7900BF7052 /* sampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				669EF55524C1945E00DE5765 /* recommendViewController */,
+				669EF55424C1941400DE5765 /* videoViewController */,
+				669EF55324C18FBD00DE5765 /* newsController */,
 				66D5FD0724BD8D7900BF7052 /* AppDelegate.h */,
 				66D5FD0824BD8D7900BF7052 /* AppDelegate.m */,
-				66D5FD0A24BD8D7900BF7052 /* SceneDelegate.h */,
-				66D5FD0B24BD8D7900BF7052 /* SceneDelegate.m */,
-				66D5FD0D24BD8D7900BF7052 /* GZHNewsViewController.h */,
-				66D5FD0E24BD8D7900BF7052 /* GZHNewsViewController.m */,
 				66D5FD1024BD8D7900BF7052 /* Main.storyboard */,
 				66D5FD1324BD8D7C00BF7052 /* Assets.xcassets */,
 				66D5FD1524BD8D7C00BF7052 /* LaunchScreen.storyboard */,
 				66D5FD1824BD8D7C00BF7052 /* Info.plist */,
 				66D5FD1924BD8D7C00BF7052 /* main.m */,
-				66D50E0E24BDEC3300BF7052 /* GZHVideoViewController.h */,
-				66D50E0F24BDEC3300BF7052 /* GZHVideoViewController.m */,
-				66D50E1124BEB4AB00BF7052 /* GZHRecommendViewController.h */,
-				66D50E1224BEB4AB00BF7052 /* GZHRecommendViewController.m */,
-				66D50E1424BEE73500BF7052 /* GZHNormalTableViewCell.h */,
-				66D50E1524BEE73500BF7052 /* GZHNormalTableViewCell.m */,
-				66D541B924C031F200BF7052 /* GZHDetailViewController.h */,
-				66D541BA24C031F200BF7052 /* GZHDetailViewController.m */,
-				66D5549C24C0832000BF7052 /* GZHDeleteCellView.h */,
-				66D5549D24C0832000BF7052 /* GZHDeleteCellView.m */,
 			);
 			path = sampleApp;
 			sourceTree = "<group>";
@@ -229,7 +248,6 @@
 				66D5FD1A24BD8D7C00BF7052 /* main.m in Sources */,
 				66D50E1024BDEC3300BF7052 /* GZHVideoViewController.m in Sources */,
 				66D50E1624BEE73500BF7052 /* GZHNormalTableViewCell.m in Sources */,
-				66D5FD0C24BD8D7900BF7052 /* SceneDelegate.m in Sources */,
 				66D541BB24C031F200BF7052 /* GZHDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
