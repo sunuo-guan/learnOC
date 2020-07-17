@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GZHNewsViewController : UIViewController 
-
+@interface GZHNewsViewController : UIViewController
 
 @end
-

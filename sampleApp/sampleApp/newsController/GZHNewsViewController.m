@@ -10,12 +10,15 @@
 #import "GZHNormalTableViewCell.h"
 #import "GZHDetailViewController.h"
 #import "GZHDeleteCellView.h"
+#import "GZHListLoader.h"
 
 @interface GZHNewsViewController () <UITableViewDataSource, UITableViewDelegate, GZHNormalTableViewCellDelegate>
 
+@property (nonatomic, strong) GZHListLoader *listLoader;
+
 @end
 
-@implementation GZHNewsViewController 
+@implementation GZHNewsViewController
 
 - (instancetype)init {
     self = [super init];
@@ -36,6 +39,9 @@
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
+    
+    self.listLoader = [[GZHListLoader alloc] init];
+    [self.listLoader loadListData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -66,7 +72,6 @@
 - (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
     GZHDeleteCellView *deleteCellView = [[GZHDeleteCellView alloc] initWithFrame:self.view.bounds];
     [deleteCellView showDeleteView];
-    
 }
 
 @end
