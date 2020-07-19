@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) UIButton *deleteButton;
+@property (nonatomic, copy) dispatch_block_t deletcBlock;
 
 @end
 
@@ -26,7 +27,9 @@
     return self;
 }
 
-- (void)showDeleteView {
+- (void)showDeleteViewFromPoint:(CGPoint)point clickBlock:(dispatch_block_t) clickBlock{
+    self.deleteButton.frame =CGRectMake(point.x, point.y, 0, 0);
+    _deletcBlock = [clickBlock copy];
     [[UIApplication sharedApplication].keyWindow addSubview:self];
 //    [UIView animateWithDuration:1.f animations:^{
 //        self.deleteButton.frame = CGRectMake(self.backgroundView.bounds.size.width / 2, self.backgroundView.bounds.size.height / 2, 50, 50);
