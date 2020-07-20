@@ -11,10 +11,11 @@
 #import "GZHDetailViewController.h"
 #import "GZHDeleteCellView.h"
 #import "GZHListLoader.h"
+#import "GZHListItem.h"
 
 @interface GZHNewsViewController () <UITableViewDataSource, UITableViewDelegate, GZHNormalTableViewCellDelegate>
 
-@property(nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) GZHListLoader *listLoader;
 
@@ -39,9 +40,15 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
-    
+
     self.listLoader = [[GZHListLoader alloc] init];
-    [self.listLoader loadListData];
+
+    __weak typeof(self) wself = self;
+    [self.listLoader loadListDataWithFinishBlock:^(BOOL success, NSArray<GZHListItem *> *_Nonnull dataArray) {
+        __strong typeof(self) strongSelf = wself;
+        strongSelf.dataArray = dataArray;
+        [strongSelf.tableView reloadData];
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -58,14 +65,15 @@
         cell = [[GZHNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
         cell.delegate = self;
     }
-    [cell layoutTableViewCell];
+    [cell layoutTableViewCellWithItem:[self.dataArray objectAtIndex:indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    GZHDetailViewController *vc = [[GZHDetailViewController alloc] init];
+    GZHListItem *listItem = [self.dataArray objectAtIndex:indexPath.row];
+    GZHDetailViewController *vc = [[GZHDetailViewController alloc] initWithUrlString:listItem.articleUrl];
     vc.view.backgroundColor = [UIColor whiteColor];
-    vc.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+    vc.title = [NSString stringWithFormat:@"%@", listItem.title];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -90,9 +98,6 @@
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = @[].mutableCopy;
-        for (int i = 0; i < 20; i++) {
-            [_dataArray addObject:@(i)];
-        }
     }
     return _dataArray;
 }

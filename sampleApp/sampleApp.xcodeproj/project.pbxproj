@@ -20,6 +20,7 @@
 		66D5FD1424BD8D7C00BF7052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66D5FD1324BD8D7C00BF7052 /* Assets.xcassets */; };
 		66D5FD1724BD8D7C00BF7052 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D5FD1524BD8D7C00BF7052 /* LaunchScreen.storyboard */; };
 		66D5FD1A24BD8D7C00BF7052 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD1924BD8D7C00BF7052 /* main.m */; };
+		66F5C31E24C579680061F177 /* GZHListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F5C31D24C579680061F177 /* GZHListItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		66D5FD1624BD8D7C00BF7052 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66D5FD1824BD8D7C00BF7052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66D5FD1924BD8D7C00BF7052 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		66F5C31C24C579680061F177 /* GZHListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHListItem.h; sourceTree = "<group>"; };
+		66F5C31D24C579680061F177 /* GZHListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHListItem.m; sourceTree = "<group>"; };
 		7A68BEAB52BD0ABB8FBB65CF /* Pods-sampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleApp.release.xcconfig"; path = "Target Support Files/Pods-sampleApp/Pods-sampleApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,14 +68,9 @@
 		669EF55324C18FBD00DE5765 /* newsController */ = {
 			isa = PBXGroup;
 			children = (
-				66D5FD0D24BD8D7900BF7052 /* GZHNewsViewController.h */,
-				66D5FD0E24BD8D7900BF7052 /* GZHNewsViewController.m */,
-				66D541B924C031F200BF7052 /* GZHDetailViewController.h */,
-				66D541BA24C031F200BF7052 /* GZHDetailViewController.m */,
-				66D5549C24C0832000BF7052 /* GZHDeleteCellView.h */,
-				66D5549D24C0832000BF7052 /* GZHDeleteCellView.m */,
-				66D50E1424BEE73500BF7052 /* GZHNormalTableViewCell.h */,
-				66D50E1524BEE73500BF7052 /* GZHNormalTableViewCell.m */,
+				66F5C31824C5791F0061F177 /* Controller */,
+				66F5C31724C579100061F177 /* View */,
+				66F5C31524C578AB0061F177 /* Model */,
 			);
 			path = newsController;
 			sourceTree = "<group>";
@@ -93,15 +91,6 @@
 				66D50E1224BEB4AB00BF7052 /* GZHRecommendViewController.m */,
 			);
 			path = recommendViewController;
-			sourceTree = "<group>";
-		};
-		669EF55924C19D0000DE5765 /* loader */ = {
-			isa = PBXGroup;
-			children = (
-				669EF55624C19CFC00DE5765 /* GZHListLoader.h */,
-				669EF55724C19CFC00DE5765 /* GZHListLoader.m */,
-			);
-			path = loader;
 			sourceTree = "<group>";
 		};
 		66D5FCFB24BD8D7900BF7052 = {
@@ -125,7 +114,6 @@
 		66D5FD0624BD8D7900BF7052 /* sampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				669EF55924C19D0000DE5765 /* loader */,
 				669EF55524C1945E00DE5765 /* recommendViewController */,
 				669EF55424C1941400DE5765 /* videoViewController */,
 				669EF55324C18FBD00DE5765 /* newsController */,
@@ -138,6 +126,39 @@
 				66D5FD1924BD8D7C00BF7052 /* main.m */,
 			);
 			path = sampleApp;
+			sourceTree = "<group>";
+		};
+		66F5C31524C578AB0061F177 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				669EF55624C19CFC00DE5765 /* GZHListLoader.h */,
+				669EF55724C19CFC00DE5765 /* GZHListLoader.m */,
+				66F5C31C24C579680061F177 /* GZHListItem.h */,
+				66F5C31D24C579680061F177 /* GZHListItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		66F5C31724C579100061F177 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66D5549C24C0832000BF7052 /* GZHDeleteCellView.h */,
+				66D5549D24C0832000BF7052 /* GZHDeleteCellView.m */,
+				66D50E1424BEE73500BF7052 /* GZHNormalTableViewCell.h */,
+				66D50E1524BEE73500BF7052 /* GZHNormalTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66F5C31824C5791F0061F177 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				66D5FD0D24BD8D7900BF7052 /* GZHNewsViewController.h */,
+				66D5FD0E24BD8D7900BF7052 /* GZHNewsViewController.m */,
+				66D541B924C031F200BF7052 /* GZHDetailViewController.h */,
+				66D541BA24C031F200BF7052 /* GZHDetailViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		7875F52BA52E0FD99C98632E /* Frameworks */ = {
@@ -254,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F5C31E24C579680061F177 /* GZHListItem.m in Sources */,
 				669EF55824C19CFC00DE5765 /* GZHListLoader.m in Sources */,
 				66D5FD0F24BD8D7900BF7052 /* GZHNewsViewController.m in Sources */,
 				66D50E1324BEB4AB00BF7052 /* GZHRecommendViewController.m in Sources */,

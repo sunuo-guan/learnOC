@@ -7,6 +7,7 @@
 //
 
 #import "GZHNormalTableViewCell.h"
+#import "GZHListItem.h"
 #import <Masonry/Masonry.h>
 
 @interface GZHNormalTableViewCell ()
@@ -72,12 +73,14 @@
 }
 
 //传入model，根据model的数据调整布局
-- (void)layoutTableViewCell {
-    self.titleLabel.text = @"《Objective-C 高级编程》干货三部曲（一）：引用计数篇";
-    self.sourceLabel.text = @"掘金";
-    self.commandLabel.text = @"阅读 5162";
-    self.timeLabel.text = @"2017年04月10日";
-    self.rightImageView.image = [UIImage imageNamed:@"testImage"];
+- (void)layoutTableViewCellWithItem:(GZHListItem *)item {
+    self.titleLabel.text = item.title;
+    self.sourceLabel.text = item.authorName;
+    self.commandLabel.text = item.category;
+    self.timeLabel.text = item.date;
+    
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
+    self.rightImageView.image = image;
     
     //自动布局情况下sizeToFit麻烦了，特定情况下可以使用
 //    self.sourceLabel.text = @"掘金";
@@ -111,6 +114,8 @@
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.font = [UIFont systemFontOfSize:16];
         _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.numberOfLines = 2;
+        _titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     }
     return _titleLabel;
 }
