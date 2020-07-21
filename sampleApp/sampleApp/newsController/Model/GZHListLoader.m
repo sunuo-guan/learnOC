@@ -61,19 +61,23 @@
     [fileManager createDirectoryAtPath:dataPath withIntermediateDirectories:YES attributes:nil error:&createError];
 
     //创建文件
-    NSString *listDataPath = [dataPath stringByAppendingPathComponent:@"List"];
+    //NSString *listDataPath = [dataPath stringByAppendingPathComponent:@"List"];
 
     //序列化对象
     NSData *listData = [NSKeyedArchiver archivedDataWithRootObject:array requiringSecureCoding:YES error:nil];
 
     //再保存到文件中
-    [fileManager createFileAtPath:listDataPath contents:listData attributes:nil];
-
+    //[fileManager createFileAtPath:listDataPath contents:listData attributes:nil];
+    //从文件读
+    //NSData *readListData = [fileManager contentsAtPath:listDataPath];
+    
+    //nsuserdefault
+    [[NSUserDefaults standardUserDefaults] setObject:listData forKey:@"listData"];
+    NSData *readListData = [[NSUserDefaults standardUserDefaults] objectForKey:@"listData"];
+    
     //反序列化
-    NSData *readListData = [fileManager contentsAtPath:listDataPath];
-
     id unarchiveObj = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [GZHListItem class], nil] fromData:readListData error:nil];
-
+    
     //查询文件
 //    BOOL fileExist = [fileManager fileExistsAtPath:listDataPath];
 
