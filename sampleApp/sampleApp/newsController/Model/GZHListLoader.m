@@ -26,6 +26,7 @@
 //    NSURLRequest *listRequest = [NSURLRequest requestWithURL:listURL];
 
     NSURLSession *session = [NSURLSession sharedSession];
+    __weak typeof(self) wself = self;
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:listURL completionHandler:^(NSData *_Nullable data, NSURLResponse *_Nullable response, NSError *_Nullable error) {
         NSError *jsonError;
         id jsonObj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
@@ -37,6 +38,8 @@
             [listItem configWithDictionary:info];
             [listItemArray addObject:listItem];
         }
+        __strong typeof(self) strongSelf = wself;
+        [strongSelf _archiveListDataWithArray:listItemArray.copy];
         dispatch_async(dispatch_get_main_queue(), ^{
                            if (finishBlock) {
                                finishBlock(error == nil, listItemArray.copy);
@@ -44,40 +47,49 @@
                        });
     }];
     [dataTask resume];
-    [self _getSandBoxPath];
 }
 
-- (void)_getSandBoxPath {
+- (void)_archiveListDataWithArray:(NSArray<GZHListItem *> *)array {
     NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *cachePath = [pathArray firstObject];
-    
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    
+
     //创建文件夹
     NSString *dataPath = [cachePath stringByAppendingPathComponent:@"GZHData"];
     NSError *createError;
     [fileManager createDirectoryAtPath:dataPath withIntermediateDirectories:YES attributes:nil error:&createError];
-    
+
     //创建文件
     NSString *listDataPath = [dataPath stringByAppendingPathComponent:@"List"];
-    NSData *listData = [@"abc" dataUsingEncoding:NSUTF8StringEncoding];
+
+    //序列化对象
+    NSData *listData = [NSKeyedArchiver archivedDataWithRootObject:array requiringSecureCoding:YES error:nil];
+
+    //再保存到文件中
     [fileManager createFileAtPath:listDataPath contents:listData attributes:nil];
-    
+
+    //反序列化
+    NSData *readListData = [fileManager contentsAtPath:listDataPath];
+
+    id unarchiveObj = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [GZHListItem class], nil] fromData:readListData error:nil];
+
     //查询文件
-    BOOL fileExist = [fileManager fileExistsAtPath:listDataPath];
-    
-    //删除
+//    BOOL fileExist = [fileManager fileExistsAtPath:listDataPath];
+
 //    if (fileExist) {
-//        [fileManager removeItemAtPath:listDataPath error:nil];
+//        //删除
+//        //[fileManager removeItemAtPath:listDataPath error:nil];
+//        NSFileHandle *fileHandler = [NSFileHandle fileHandleForUpdatingAtPath:listDataPath];
+//
+//        //文件尾部追加数据
+//        [fileHandler seekToEndOfFile];
+//        [fileHandler writeData:[@"abc" dataUsingEncoding:NSUTF8StringEncoding]];
+//        //文件同步
+//        [fileHandler synchronizeFile];
+//        //关闭文件
+//        [fileHandler closeFile];
 //    }
-    
-    NSFileHandle *fileHandler = [NSFileHandle fileHandleForUpdatingAtPath:listDataPath];
-    
-    [fileHandler seekToEndOfFile];
-    [fileHandler writeData:[@"abc" dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [fileHandler synchronizeFile];
-    [fileHandler closeFile];
 }
 
 @end

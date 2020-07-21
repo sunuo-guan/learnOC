@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GZHListItem : NSObject
+@interface GZHListItem : NSObject <NSSecureCoding>
 
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) NSString *picUrl;
