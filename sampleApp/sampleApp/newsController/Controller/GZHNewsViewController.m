@@ -75,6 +75,9 @@
     vc.view.backgroundColor = [UIColor whiteColor];
     vc.title = [NSString stringWithFormat:@"%@", listItem.title];
     [self.navigationController pushViewController:vc animated:YES];
+    
+    //点击后
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:listItem.uniqueKey];
 }
 
 - (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {

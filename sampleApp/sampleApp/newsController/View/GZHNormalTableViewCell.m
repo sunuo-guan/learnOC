@@ -48,7 +48,7 @@
     [self.rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(70, 70));
         make.top.equalTo(self.titleLabel);
-        make.left.equalTo(self.titleLabel.mas_right).offset(10);
+        make.right.equalTo(self.mas_right).offset(-20);
     }];
     [self.sourceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         //make.size.mas_equalTo(CGSizeMake(50, 20));
@@ -74,6 +74,12 @@
 
 //传入model，根据model的数据调整布局
 - (void)layoutTableViewCellWithItem:(GZHListItem *)item {
+    BOOL hasRead = [[NSUserDefaults standardUserDefaults] boolForKey:item.uniqueKey];
+    if (hasRead) {
+        self.titleLabel.textColor = [UIColor lightGrayColor];
+    } else {
+        self.titleLabel.textColor = [UIColor blackColor];
+    }
     self.titleLabel.text = item.title;
     self.sourceLabel.text = item.authorName;
     self.commandLabel.text = item.category;
