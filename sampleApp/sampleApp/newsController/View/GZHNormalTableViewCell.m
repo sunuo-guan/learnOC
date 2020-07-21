@@ -9,6 +9,7 @@
 #import "GZHNormalTableViewCell.h"
 #import "GZHListItem.h"
 #import <Masonry/Masonry.h>
+#import <SDWebImage.h>
 
 @interface GZHNormalTableViewCell ()
 
@@ -84,26 +85,32 @@
     self.sourceLabel.text = item.authorName;
     self.commandLabel.text = item.category;
     self.timeLabel.text = item.date;
-    
-    
+
 //    NSThread *downloadImageThread = [[NSThread alloc] initWithBlock:^{
 //        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
 //        self.rightImageView.image = image;
 //    }];
 //    downloadImageThread.name = @"downloadImageThread";
 //    [downloadImageThread start];
-    
-    dispatch_queue_global_t downloadQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_queue_main_t mainQueue = dispatch_get_main_queue();
-    
-    //dispatch_async异步
-    dispatch_async(downloadQueue, ^{
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
-        dispatch_async(mainQueue, ^{
-            self.rightImageView.image = image;
-        });
-    });
-    
+
+    //gcd
+//    dispatch_queue_global_t downloadQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_queue_main_t mainQueue = dispatch_get_main_queue();
+//
+//    //dispatch_async异步
+//    dispatch_async(downloadQueue, ^{
+//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
+//        dispatch_async(mainQueue, ^{
+//            self.rightImageView.image = image;
+//        });
+//    });
+
+    //sdimage加载网络图片
+    [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:item.picUrl]
+                                  completed:^(UIImage *_Nullable image, NSError *_Nullable error, SDImageCacheType cacheType, NSURL *_Nullable imageURL) {
+                                      NSLog(@"");
+                                  }];
+
     //自动布局情况下sizeToFit麻烦了，特定情况下可以使用
 //    self.sourceLabel.text = @"掘金";
 //    [self.sourceLabel sizeToFit];
