@@ -21,6 +21,7 @@
 		66D5FD1724BD8D7C00BF7052 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D5FD1524BD8D7C00BF7052 /* LaunchScreen.storyboard */; };
 		66D5FD1A24BD8D7C00BF7052 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5FD1924BD8D7C00BF7052 /* main.m */; };
 		66F5C31E24C579680061F177 /* GZHListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F5C31D24C579680061F177 /* GZHListItem.m */; };
+		66F5E67C24C713710061F177 /* GZHVideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F5E67B24C713710061F177 /* GZHVideoCoverView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		66D5FD1924BD8D7C00BF7052 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66F5C31C24C579680061F177 /* GZHListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHListItem.h; sourceTree = "<group>"; };
 		66F5C31D24C579680061F177 /* GZHListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHListItem.m; sourceTree = "<group>"; };
+		66F5E67A24C713710061F177 /* GZHVideoCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZHVideoCoverView.h; sourceTree = "<group>"; };
+		66F5E67B24C713710061F177 /* GZHVideoCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZHVideoCoverView.m; sourceTree = "<group>"; };
 		7A68BEAB52BD0ABB8FBB65CF /* Pods-sampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleApp.release.xcconfig"; path = "Target Support Files/Pods-sampleApp/Pods-sampleApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,13 +78,15 @@
 			path = newsController;
 			sourceTree = "<group>";
 		};
-		669EF55424C1941400DE5765 /* videoViewController */ = {
+		669EF55424C1941400DE5765 /* videoController */ = {
 			isa = PBXGroup;
 			children = (
 				66D50E0E24BDEC3300BF7052 /* GZHVideoViewController.h */,
 				66D50E0F24BDEC3300BF7052 /* GZHVideoViewController.m */,
+				66F5E67A24C713710061F177 /* GZHVideoCoverView.h */,
+				66F5E67B24C713710061F177 /* GZHVideoCoverView.m */,
 			);
-			path = videoViewController;
+			path = videoController;
 			sourceTree = "<group>";
 		};
 		669EF55524C1945E00DE5765 /* recommendViewController */ = {
@@ -115,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				669EF55524C1945E00DE5765 /* recommendViewController */,
-				669EF55424C1941400DE5765 /* videoViewController */,
+				669EF55424C1941400DE5765 /* videoController */,
 				669EF55324C18FBD00DE5765 /* newsController */,
 				66D5FD0724BD8D7900BF7052 /* AppDelegate.h */,
 				66D5FD0824BD8D7900BF7052 /* AppDelegate.m */,
@@ -277,6 +282,7 @@
 			files = (
 				66F5C31E24C579680061F177 /* GZHListItem.m in Sources */,
 				669EF55824C19CFC00DE5765 /* GZHListLoader.m in Sources */,
+				66F5E67C24C713710061F177 /* GZHVideoCoverView.m in Sources */,
 				66D5FD0F24BD8D7900BF7052 /* GZHNewsViewController.m in Sources */,
 				66D50E1324BEB4AB00BF7052 /* GZHRecommendViewController.m in Sources */,
 				66D5FD0924BD8D7900BF7052 /* AppDelegate.m in Sources */,
