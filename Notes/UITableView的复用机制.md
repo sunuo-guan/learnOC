@@ -81,7 +81,7 @@
 
 ## 四、`UITableView`的相关回调方法的调用次序
 
-`UITableView` 在复用时最主要的两个回调方法：`- [UITableView tableView:cellForRowAtIndexPath:]`和`- [UITableView tableView:heightForRowAtIndexPath:]`。`UITableView` 是继承自 `UIScrollView`，所以在渲染的过程中它会先确定它的 `contentSize` 及每个 `UITableViewCell` 的位置，然后才会把复用的 `Cell` 放置到对应的位置。比如现在一共有 50 个 `UITableViewCell`，当前屏幕上显示 5 个。那么在第一次创建或 `reloadData` 的时候， `UITableView` 会先调用 50 次`- [UITableView tableView:heightForRowAtIndexPath:]`确定 `contentSize` 及每个 `Cell` 的位置，然后再调用 5 次 `- [UITableView tableView:cellForRowAtIndexPath:]`来渲染当前屏幕的 Cell。在滑动屏幕的时候，每当一个 `UITableViewCell` 进入屏幕时，都需要调用一次 `- [UITableView tableView:cellForRowAtIndexPath:]`和`- [UITableView tableView:heightForRowAtIndexPath:]`方法。
+> `UITableView` 在复用时最主要的两个回调方法：`- [UITableView tableView:cellForRowAtIndexPath:]`和`- [UITableView tableView:heightForRowAtIndexPath:]`。`UITableView` 是继承自 `UIScrollView`，所以在渲染的过程中它会先确定它的 `contentSize` 及每个 `UITableViewCell` 的位置，然后才会把复用的 `Cell` 放置到对应的位置。比如现在一共有 50 个 `UITableViewCell`，当前屏幕上显示 5 个。那么在第一次创建或 `reloadData` 的时候， `UITableView` 会先调用 50 次`- [UITableView tableView:heightForRowAtIndexPath:]`确定 `contentSize` 及每个 `Cell` 的位置，然后再调用 5 次 `- [UITableView tableView:cellForRowAtIndexPath:]`来渲染当前屏幕的 Cell。在滑动屏幕的时候，每当一个 `UITableViewCell` 进入屏幕时，都需要调用一次 `- [UITableView tableView:cellForRowAtIndexPath:]`和`- [UITableView tableView:heightForRowAtIndexPath:]`方法。
 
 
 
